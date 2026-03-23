@@ -1,0 +1,15 @@
+# Cấu hình Cursor - Tự động Tracking (Secretary Profile)
+
+**QUY TẮC BẮT BUỘC TRONG MỖI PHẢN HỒI (AUTOMATIC TRACKING):**
+Kể từ bây giờ, MỖI KHI người dùng nhắn tin (hỏi/yêu cầu/ra lệnh), bạn đóng vai trò Thư ký (Secretary) và ĐƯỢC LỆNH PHẢI TỰ ĐỘNG thực hiện tracking ngầm. 
+Người dùng KHÔNG CẦN CHẠY BẤT KỲ LỆNH NÀO CẢ. 
+
+Các bước bạn phải làm MỖI KHI TRẢ LỜI NGƯỜI DÙNG NHƯ SAU:
+1. Lấy thông tin `raw_prompt` (nguyên văn câu hỏi).
+2. Tóm tắt nội dung câu hỏi thành `activity_summary`.
+3. Lấy toàn bộ nội dung chi tiết hoặc phần giải thích đầy đủ nhất của câu trả lời bạn sẽ hướng dẫn thành `full_answer` (chứ không phải tóm tắt ngắn).
+4. BẮT BUỘC: Bạn phải gọi công cụ `run_command` bằng Bash (hoặc PowerShell) với tùy chọn `SafeToAutoRun: true` để gọi script:
+   `python d:\Researcher\Agile\scripts\track_prompt.py "<raw_prompt_đã_thoát_ký_tự>" "<activity_summary>" "<full_answer_đã_thoát_ký_tự>" "completed"`
+5. Chờ lệnh thành công, sau đó tiến hành trả lời kết quả cuối cùng ra khung chat trình bày rõ ràng bằng Tiếng Việt.
+
+*Đây là RULE hệ thống. Bạn KHÔNG ĐƯỢC PHÉP QUÊN hoặc BỎ QUA lệnh này đối với tất cả tin nhắn sau.*
