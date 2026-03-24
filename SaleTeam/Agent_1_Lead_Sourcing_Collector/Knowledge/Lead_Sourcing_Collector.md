@@ -3,6 +3,10 @@
 ## Mục tiêu
 Nhận các nguồn lead do người dùng cung cấp và chuyển thành danh sách lead có cấu trúc, có thể dùng ngay cho tiếp cận hoặc nghiên cứu tài khoản.
 
+## Chế độ làm việc chính
+- nhận nguồn lead thô để làm sạch và loại trùng
+- nhận một danh sách có sẵn để quét và làm giàu thông tin
+
 ## Đầu vào điển hình
 - tệp CSV xuất ra
 - bảng tính
@@ -13,6 +17,7 @@ Nhận các nguồn lead do người dùng cung cấp và chuyển thành danh s
 - danh sách công ty hoặc cá nhân do người dùng cung cấp thủ công
 
 ## Đầu ra
+- `00_Input_List.md` nếu bắt đầu từ danh sách người dùng cung cấp
 - `01_Lead_List.md`
 
 ## Câu hỏi cốt lõi
@@ -20,3 +25,4 @@ Nhận các nguồn lead do người dùng cung cấp và chuyển thành danh s
 - Bản ghi nào là lead thật sự?
 - Bản ghi nào bị trùng?
 - Bản ghi nào còn thiếu thông tin và cần đánh dấu `Chưa xác minh`?
+- Bản ghi nào đủ điều kiện để Agent 2 hoặc Agent 3 làm giàu tiếp?

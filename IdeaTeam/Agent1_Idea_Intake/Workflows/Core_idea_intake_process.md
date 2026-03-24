@@ -23,7 +23,7 @@ Khi nhận thông tin từ người dùng, Agent 1 phải ngay lập tức phân
 - *Quy tắc*: Đề xuất phải dựa trên best practices và luôn phải kèm theo câu hỏi để người dùng chốt phương án.
 
 **Kịch bản 3: Học từ nguồn có sẵn (Source Driven / KWSR)**
-- *Hành động*: Kích hoạt sub-agent `product-learn` để quét URL/tài liệu được cung cấp. Sau khi học xong, Agent 1 phải rà soát xem còn thiếu yếu tố cốt lõi nào không (JTBD, bối cảnh riêng của người dùng) và hỏi lại người dùng để bổ sung.
+- *Hành động*: Kích hoạt sub-agent `LearnAgent` để quét URL/tài liệu được cung cấp. Sau khi học xong, Agent 1 phải rà soát xem còn thiếu yếu tố cốt lõi nào không (JTBD, bối cảnh riêng của người dùng) và hỏi lại người dùng để bổ sung.
 - *Quy tắc*: Chỉ đưa ra đề xuất rút ra từ nguồn NẾU người dùng có yêu cầu. Nếu không, chỉ tóm tắt nội dung đã học và bộ câu hỏi bổ sung.
 
 ### Bước 2: Khai thác yêu cầu có cấu trúc
@@ -56,7 +56,7 @@ Khi nhận thông tin từ người dùng, Agent 1 phải ngay lập tức phân
 - Chỉ kích hoạt nghiên cứu đối thủ, phân tích thị trường, hoặc RAID khi:
   - người dùng yêu cầu, hoặc
   - đã chốt tương đối đầy đủ yêu cầu cốt lõi và đang chuyển sang tài liệu hóa.
-- **Học ý tưởng từ Website**: Nếu người dùng cung cấp URL hoặc yêu cầu học từ sản phẩm có sẵn, kích hoạt sub-agent `product-learn` theo quy trình `KWSR_website_learning_workflow.md`.
+- **Học ý tưởng từ Website**: Nếu người dùng cung cấp URL hoặc yêu cầu học từ sản phẩm có sẵn, kích hoạt sub-agent `LearnAgent` theo quy trình `KWSR_website_learning_workflow.md`.
 - Không dùng nghiên cứu thay thế cho việc hỏi người dùng.
 
 ### Bước 5: Tạo output tài liệu khi đã đủ dữ liệu

@@ -2,116 +2,77 @@
 
 ## Chương 1: Triết lý & Giá trị cốt lõi
 
-Hệ thống **Elite Agent Documentation Framework** là một quy trình khép kín gồm 4 Agent chuyên biệt, phối hợp để chuyển đổi một ý tưởng thô thành bộ hồ sơ dự án MVP hoàn chỉnh và tài liệu thiết kế UI/UX có thể bàn giao.
+Hệ thống **Elite Agent Documentation Framework** là một quy trình khép kín gồm **5 Agent** chuyên biệt, phối hợp để chuyển đổi một ý tưởng thô thành bộ hồ sơ dự án MVP hoàn chỉnh và tài liệu thiết kế UI/UX chuyên nghiệp.
 
 ### 1.1 Triết lý JTBD
 Mọi sản phẩm được tạo ra không phải để tồn tại vì tính năng, mà để giải quyết một "công việc" cốt lõi của người dùng. Framework bắt buộc các Agent phải liên tục đặt câu hỏi: *"Sản phẩm này được thuê để làm gì?"* và loại bỏ mọi phần thừa không phục vụ mục tiêu đó.
 
-### 1.2 Mô hình 4 lớp chuyên biệt
-1. **Lớp Chiến lược (Agent 1)**: Định hình `What & Why`
-2. **Lớp Kỹ thuật (Agent 2)**: Định hình `How`
-3. **Lớp Hoàn thiện (Agent 3)**: Định hình `Quality & Detail`
-4. **Lớp Thiết kế (Agent 4)**: Định hình `Look & Feel`
+### 1.2 Mô hình 5 Agent chuyên biệt
+1. **LearnAgent (Research & Strategy)**: Thu thập tri thức từ website đối thủ/thị trường (KWSR).
+2. **Agent 1 (Intake & Strategy)**: Định hình `What & Why` - Cấu trúc BRD/PPD/SDK.
+3. **Agent 2 (Architecture)**: Định hình `How` - Cấu trúc kỹ thuật SDD.
+4. **Agent 3 (Detailing)**: Định hình `Quality & Detail` - Cấu trúc PRD/SRS/Test Cases.
+5. **Agent 4 (UI/UX Designer)**: Định hình `Look & Feel` - Cấu trúc Design Specs.
 
 ---
 
 ## Chương 2: Lộ trình phát triển sản phẩm
 
+### Phase 0: Knowledge Acquisition (LearnAgent)
+Dịch ngược (Reverse-engineering) website đối thủ để lấy User Flow, Business Model, Features và NFR thực tế.
+
 ### Phase 1: Business Strategy (Agent 1)
-Trọng tâm là làm rõ bài toán, người dùng, JTBD, phạm vi và điều kiện thành công.
+Làm rõ bài toán, người dùng, JTBD thông qua 3 kịch bản: Idea Driven, Proposal Driven, hoặc Source Driven (từ LearnAgent).
+> [!IMPORTANT]
+> **BRD bắt buộc phải có**: Business Process Flow chi tiết và Khai thác yêu cầu phi chức năng (NFR).
 
 ### Phase 2: Technical Design (Agent 2)
-Trọng tâm là thiết kế kiến trúc, tích hợp, khả năng triển khai và các ràng buộc kỹ thuật.
+Thiết kế kiến trúc, DB Schema và API Design dựa trên BRD của Agent 1.
 
 ### Phase 3: Documentation & QA (Agent 3)
-Trọng tâm là đặc tả MVP, hệ thống hóa yêu cầu chi tiết, viết test cases và đóng gói hồ sơ dự án.
+Hệ thống hóa yêu cầu chi tiết (SRS/PRD) và viết Test Cases đồng bộ với logic nghiệp vụ.
 
 ### Phase 4: Visual Design (Agent 4)
-Trọng tâm là chuyển yêu cầu thành UI/UX, prototype và handoff thiết kế.
-
-### Bảng bàn giao (Handoff Matrix)
-| Giai đoạn | Bên gửi | Tài liệu bàn giao | Bên nhận | Nhiệm vụ tiếp theo |
-| :--- | :--- | :--- | :--- | :--- |
-| Handoff 1 | Agent 1 | Output trong `Agent 1/` | Agent 2 | Thiết kế giải pháp kỹ thuật dựa trên BRD/PPD/SDK |
-| Handoff 2 | Agent 2 | Output trong `Agent 2/` | Agent 3 | Chi tiết hóa PRD, SRS, Test Cases |
-| Handoff 3 | Agent 3 | Output trong `Agent 3/` | Agent 4 | Thiết kế UI/UX dựa trên PRD/SRS |
-| Final Delivery | Agent 4 | Output trong `Agent 4/` + Master Index | Human | Nghiệm thu hồ sơ và thiết kế |
+Chuyển đổi yêu cầu thành giao diện.
+> [!IMPORTANT]
+> **Design Specs bắt buộc phải có**: Screen Inventory được đánh mã và map trực tiếp với User Flow trong PRD/BRD.
 
 ---
 
 ## Chương 3: Cấu trúc output chuẩn
 
-Mỗi dự án trong `Output/[Project_Name]/` phải được tổ chức theo 4 thư mục cố định:
+Mỗi dự án trong `Output/[Project_Name]/` phải được tổ chức theo các thư mục:
 
-- `Agent 1/`: toàn bộ đầu ra của Agent 1
-- `Agent 2/`: toàn bộ đầu ra của Agent 2
-- `Agent 3/`: toàn bộ đầu ra của Agent 3
-- `Agent 4/`: toàn bộ đầu ra của Agent 4
+- `LearnAgent/`: Dữ liệu nghiên cứu thô và phân tích đối thủ.
+- `Agent 1/`: `[Project]_BRD.md`, `[Project]_PPD.md`, `[Project]_SDK.md`.
+- `Agent 2/`: `[Project]_Solution_Design.md`.
+- `Agent 3/`: `MVP_PRD.md`, `[Project]_SRS.md`, `MVP_Test_Cases.md`.
+- `Agent 4/`: `Design_Specs.md`, `Screens/`.
 
-Ngoài 4 thư mục trên, tại thư mục gốc dự án chỉ giữ:
-- `Master_Project_Index.md`
-
-### 3.1 Mapping tài liệu theo Agent
-- **Agent 1**
-  - `[Project]_BRD.md`
-  - `[Project]_PPD.md`
-  - `[Project]_SDK.md`
-- **Agent 2**
-  - `[Project]_Solution_Design.md`
-- **Agent 3**
-  - `Executive_Summary.md` nếu có
-  - `MVP_PRD.md`
-  - `[Project]_SRS.md`
-  - `MVP_Test_Cases.md`
-- **Agent 4**
-  - `Design_Specs.md`
-  - `Screens/` hoặc các asset thiết kế nếu có
-
-### 3.2 Master Project Index
-Mỗi project phải có `Master_Project_Index.md` tại thư mục gốc và file này bắt buộc có:
-- các section `Agent 1 Output`, `Agent 2 Output`, `Agent 3 Output`, `Agent 4 Output`
-- các link trỏ đúng tới thư mục agent tương ứng
-- section **Recommended Reading Order**
-
-### 3.3 Recommended Reading Order
-`Recommended Reading Order` là phần bắt buộc trong `Master_Project_Index.md` để hướng dẫn người đọc đọc hồ sơ theo thứ tự phù hợp nhất.
-
-Thứ tự mặc định khuyến nghị:
-1. Agent 1 / BRD
-2. Agent 1 / PPD
-3. Agent 1 / SDK
-4. Agent 3 / Executive Summary nếu có
-5. Agent 3 / MVP PRD
-6. Agent 3 / SRS
-7. Agent 2 / Solution Design
-8. Agent 4 / Design Specs
-9. Agent 3 / Test Cases
-
-Có thể điều chỉnh thứ tự cho từng dự án, nhưng section này không được thiếu.
+Tại thư mục gốc dự án:
+- `Master_Project_Index.md`: Bản đồ điều hướng toàn bộ hồ sơ.
 
 ---
 
-## Chương 4: Vai trò từng tài liệu
+## Chương 4: Vai trò & Yêu cầu cụ thể của Tài liệu
 
-- **[Project]_BRD.md**: Kim chỉ nam nghiệp vụ và user flow cốt lõi.
-- **[Project]_PPD.md**: Bản đồ định vị và góc nhìn thị trường.
-- **[Project]_SDK.md**: Bộ narrative dùng cho sales/demo/giải thích giá trị.
-- **[Project]_Solution_Design.md**: Bản vẽ kiến trúc kỹ thuật.
-- **Executive_Summary.md**: Bản tóm tắt cấp quản trị.
-- **MVP_PRD.md**: Product requirements cho MVP.
-- **[Project]_SRS.md**: Đặc tả hệ thống chi tiết.
-- **MVP_Test_Cases.md**: Kịch bản kiểm thử nghiệm thu.
-- **Design_Specs.md**: UI/UX strategy, wireframe, component direction.
-- **Master_Project_Index.md**: Bản đồ điều hướng toàn bộ hồ sơ dự án.
+### 4.1 Agent 1: Bộ 3 Quyền lực
+- **BRD**: Kim chỉ nam nghiệp vụ. **BẮT BUỘC** mô tả luồng quy trình (Business Process Flow) và các ràng buộc phi chức năng (NFR).
+- **PPD**: Định vị thị trường và chân dung khách hàng mục tiêu.
+- **SDK**: Bộ nguyên liệu Social Proof và nội dung bán hàng.
+
+### 4.2 Agent 4: Design Specs chuẩn Elite
+- Phải có **Screen Inventory**: Danh sách tất cả màn hình cần thiết kế.
+- Phải khớp với **User Flow**: Đảm bảo không bỏ sót bước nào trong hành trình trải nghiệm người dùng.
 
 ---
 
 ## Chương 5: Quản trị & vận hành
 
-1. **Living Document Policy**: Guideline này là tài liệu sống, phải được cập nhật ngay khi thay đổi cấu trúc hoặc quy tắc.
-2. **Strict Handover**: Agent sau không tự ý thay đổi scope của Agent trước nếu chưa được xác nhận.
-3. **Consistency Rule**: Tên dự án, tên file, thuật ngữ và cấu trúc thư mục phải nhất quán xuyên suốt 4 Agent.
-4. **Output Ownership Rule**: Mỗi tài liệu phải nằm đúng thư mục agent đã tạo ra nó.
+1. **Living Document Policy**: Guideline này phải được cập nhật ngay khi thay đổi quy tắc.
+2. **Strict Handover**: Agent sau kế thừa dữ liệu của Agent trước, mọi thay đổi scope lớn phải được PO phê duyệt.
+3. **Consistency Rule**: Tên dự án, tên file và thuật ngữ phải nhất quán xuyên suốt 5 Agent.
+4. **Relative Path Rule**: Tất cả các liên kết (links) trong tài liệu và `Master_Project_Index.md` bắt buộc phải sử dụng **đường dẫn tương đối (Relative Path)**. Tuyệt đối không sử dụng đường dẫn tuyệt đối (Absolute Path) hoặc định dạng `file:///d:/` để đảm bảo tính di động của hồ sơ.
 
 ---
 *Elite Agent Documentation Framework - Standardizing Excellence.*
