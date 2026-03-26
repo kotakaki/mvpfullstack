@@ -1,5 +1,0 @@
-{
-    "logging_enabled": true,
-    "log_level": "info",
-    "storage_path": "../knowledge"
-}

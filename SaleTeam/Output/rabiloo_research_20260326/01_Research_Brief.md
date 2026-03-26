@@ -1,0 +1,24 @@
+# 01_Research_Brief
+
+- Nguồn vào: Người dùng trực tiếp
+- Tên run: `rabiloo_research_20260326`
+- Tên công ty / đối tượng nghiên cứu: `Rabiloo`
+- Website / Domain: `https://rabiloo.com`
+- Mục tiêu nghiên cứu: Thu thập thông tin toàn diện về công ty, người liên lạc công khai và mạng xã hội công khai của Rabiloo
+- Câu hỏi trọng tâm:
+  - Rabiloo đang định vị mình là công ty gì?
+  - Kênh liên hệ công khai nào đang hoạt động?
+  - Những ai là người liên lạc công khai đáng chú ý?
+  - Rabiloo đang hiện diện trên những mạng xã hội nào?
+  - Tín hiệu nào hữu ích cho sales / account research?
+- Trang hoặc nhóm trang cần ưu tiên:
+  - Trang chủ
+  - About / How we built / company story
+  - Contact / footer / social links
+  - News / blog / social public page
+- Khung thời gian cần nhìn: thông tin công khai hiện hành tính đến `2026-03-26`
+- Mức output / độ sâu mong muốn: `Chuyên sâu`
+- Ghi chú khác:
+  - Chỉ dùng dữ liệu công khai
+  - Không suy đoán thông tin cá nhân riêng tư
+  - Nếu có xung đột giữa các nguồn, phải ghi rõ
