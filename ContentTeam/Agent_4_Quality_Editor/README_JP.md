@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Agent_4_FactChecker_Quality_Editor
 
 ## 役割
@@ -11,3 +12,12 @@
 
 ## 主な成果物
 - `Final_Distribution_Ready.md`: AI自らが裏付け調査を実行し、ファクトチェックを通過した完成原稿。
+=======
+# Agent_4_Quality_Editor
+
+## 役割
+執筆されたコンテンツの信頼性、トーン＆マナーを最終チェックし、ブログ、SNS、ニュースレター等の各形式へパブリッシュ可能な状態に整えます。
+
+## 主な成果物
+- `Final_Distribution_Ready.md`: 完成原稿。
+>>>>>>> 89cafe9 (feat: タイベオ先生の秘密基地（個人用）を保存)
