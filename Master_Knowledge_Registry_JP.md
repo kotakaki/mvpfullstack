@@ -12,7 +12,7 @@
 - **記事の診断・戦略**: [Agent_2_Article_Auditor_JP.md](ContentTeam/Agent_2_Article_Auditor_JP.md)
 - **ショート動画台本作成**: [Agent_3_Short_Movie_Writer_JP.md](ContentTeam/Agent_3_Short_Movie_Writer_JP.md)
 - **マーケティング向けガイド**: [Marketing_Team_Portal_JP.md](ContentTeam/Marketing_Team_Portal_JP.md)
-- **ベトナムオフショア開発 戦略ナレッジ**: [Rabiloo_Vietnam_Offshore_Strategy.md](ContentTeam/Knowledge/Rabiloo_Vietnam_Offshore_Strategy.md)
+- **リサーチ資料倉庫（自動参照しない）**: [Archive/](ContentTeam/Archive/) ※ 記事制作時に明示的に指定した場合のみ参照
 
 ### 2. 開発実績・一次情報に関すること (IdeaTeam)
 - **具体的な成功事例・実数値データ**: [IdeaTeam/Knowledge/](IdeaTeam/Knowledge/)
