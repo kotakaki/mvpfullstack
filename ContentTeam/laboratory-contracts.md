@@ -6,7 +6,7 @@ cluster: "③ ラボ型 請負 違い・契約形態"
 type: "タイプB（教育・態度変容）"
 main_kw: "ラボ契約 請負 違い / オフショア 契約形態"
 status: "執筆中"
-pillar: "vietnam-offshore-strategic-guide"
+pillar: "vietnam-offshore-development"
 ---
 
 # ラボ契約と請負契約・準委任契約の違い｜オフショア開発の契約形態の選び方

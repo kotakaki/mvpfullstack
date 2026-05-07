@@ -6,7 +6,7 @@ cluster: "② 選び方・企業比較"
 type: "タイプA（CV直結）"
 main_kw: "ベトナム オフショア 選び方 / 企業 比較"
 status: "執筆中"
-pillar: "vietnam-offshore-strategic-guide"
+pillar: "vietnam-offshore-development"
 ---
 
 # 【2026年版】ベトナムオフショア企業の選び方｜比較表では見えない3つの判断軸
