@@ -1,7 +1,7 @@
 ---
 title: "ベトナムオフショア開発の完全ガイド：HEDSPI世代が教える「人月商売」の終焉とAI時代の共創"
 description: "ベトナムオフショア開発の現状と、失敗しないための戦略的選定基準を解説。HEDSPI出身の技術者集団 Rabiloo（ラビロー）が、単なるコスト削減に留まらない「共創パートナー」としてのオフショアのあり方と、AI時代の価値提供型モデルを提案します。"
-slug: "vietnam-offshore-strategic-guide"
+slug: "vietnam-offshore-development"
 ---
 
 # ベトナムオフショア開発の完全ガイド：HEDSPI世代が教える「人月商売」の終焉とAI時代の共創
