@@ -22,3 +22,12 @@ description: 新人用タスク開始・提出の全自動化コマンド
 2. `git add .` および `git commit -m "タスク完了・レビュー提出"` を実行する。
 3. 現在の作業ブランチをリモートにPushする（`git push origin [現在のブランチ]`）。
 4. 「管理者に提出（Pull Requestの準備）が完了しました！お疲れ様でした。」とアナウンスする。
+
+## 🧹 3. タスクの後片付け（管理者用）： `/cleanup-task`
+管理者（あなた）がPull Requestを承認・マージしたあと、チャットで `/cleanup-task` と入力した場合、AIは以下の手順をすべて**裏側で自動実行**してください。
+
+1. `git checkout main` と `git pull origin main` を実行し、マージされた最新状態をローカルに反映する。
+2. `ContentTeam/Tasks/03_ForReview/` にある完成済みの記事（.mdファイル）を、正式な公開用フォルダである `ContentTeam/Output/` へ移動させる（`mv`コマンド）。
+3. その記事の作成に使われた `02_InProgress` や `03_ForReview` 内に残っている不要なタスク指示書（ゴミファイル）をすべて削除する（`rm`コマンド）。
+4. `git add .` と `git commit -m "タスク完了に伴うフォルダ整理"` を実行し、`git push origin main` でサーバーを綺麗にする。
+5. 「部屋の掃除と、完成した記事の格納が完了しました！」とアナウンスする。
