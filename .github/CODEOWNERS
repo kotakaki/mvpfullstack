@@ -1,0 +1,7 @@
+# 管理者 (@kotakaki) のみが変更・承認権限を持つファイルとディレクトリ
+# 新人がこれらのファイルを編集するPull Requestを出しても、管理者の承認なしではマージできません。
+
+/.agents/workflows/ @kotakaki
+/ContentTeam/Knowledge/ @kotakaki
+/Global_Guideline_JP.md @kotakaki
+/Master_Knowledge_Registry_JP.md @kotakaki
