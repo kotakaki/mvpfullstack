@@ -8,7 +8,7 @@
 - 二次: LINEやAIでの患者対応自動化に関心はあるが、施術録の管理自体がまだ整っていない多店舗経営者。
 
 記事タイプ: タイプB（教育記事）
-スラッグ: sekkotuin-line-chiryou-kiroku-kyoyu
+スラッグ: clinic-treatment-records
 メインKW: 整骨院 施術録
 関連KW: 施術録 テンプレート / 整骨院 施術録 書き方 / 整骨院 施術録 義務
 

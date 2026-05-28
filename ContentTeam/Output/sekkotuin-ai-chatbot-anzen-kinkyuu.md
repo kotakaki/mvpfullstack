@@ -4,7 +4,7 @@
 === 凍結済み設計図（Invariants） ===
 ターゲット: LINE×AIの導入に関心があるが「緊急時にAIが対応を誤らないか」という不安を持っている整骨院・整体院の院長・経営者
 記事タイプ: タイプB（教育記事）＋信頼構築型
-スラッグ: sekkotuin-ai-chatbot-anzen-kinkyuu
+スラッグ: clinic-chatbot-safety
 メインKW: 整骨院 AIチャットボット 安全
 関連KW: 整骨院 AI 緊急時 対応 / 整骨院 LINE AI リスク / チャットボット 引き継ぎ 設計
 
