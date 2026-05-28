@@ -19,6 +19,9 @@
 ### 5. [ContentTeam](./ContentTeam/README_JP.md)
 AI検索時代（SGE/Perplexity等）に最適化された、2026年最新のSEOコンテンツ制作を担当します。実体験や一次情報を重視し、AI検索のソースとして選ばれやすい高品質なコンテンツを生成します。
 
+AIによる自動執筆ワークフロー（`/content-engine` や `/literacy-content-engine`）の使い方は、**[記事制作エンジン 利用ガイド](./Rabiloo_Content_Engine_Guide.md)**を参照してください。
+
+
 ## 日本語化について
 各ディレクトリ内に `_JP.md` という名称の日本語版ドキュメントを配置しています。
 主なガイドラインやREADMEは日本語で確認可能です。

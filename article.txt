@@ -1,0 +1,421 @@
+Title: Live Content
+Description: Fetched live
+Source: https://rabiloo.co.jp/blog/what-is-the-application
+---
+@layer base {
+  :root {
+  --ui-color-primary-50: var(--color-green-50, oklch(98.2% 0.018 155.826));
+  --ui-color-primary-100: var(--color-green-100, oklch(96.2% 0.044 156.743));
+  --ui-color-primary-200: var(--color-green-200, oklch(92.5% 0.084 155.995));
+  --ui-color-primary-300: var(--color-green-300, oklch(87.1% 0.15 154.449));
+  --ui-color-primary-400: var(--color-green-400, oklch(79.2% 0.209 151.711));
+  --ui-color-primary-500: var(--color-green-500, oklch(72.3% 0.219 149.579));
+  --ui-color-primary-600: var(--color-green-600, oklch(62.7% 0.194 149.214));
+  --ui-color-primary-700: var(--color-green-700, oklch(52.7% 0.154 150.069));
+  --ui-color-primary-800: var(--color-green-800, oklch(44.8% 0.119 151.328));
+  --ui-color-primary-900: var(--color-green-900, oklch(39.3% 0.095 152.535));
+  --ui-color-primary-950: var(--color-green-950, oklch(26.6% 0.065 152.934));
+  --ui-color-secondary-50: var(--color-blue-50, oklch(97% 0.014 254.604));
+  --ui-color-secondary-100: var(--color-blue-100, oklch(93.2% 0.032 255.585));
+  --ui-color-secondary-200: var(--color-blue-200, oklch(88.2% 0.059 254.128));
+  --ui-color-secondary-300: var(--color-blue-300, oklch(80.9% 0.105 251.813));
+  --ui-color-secondary-400: var(--color-blue-400, oklch(70.7% 0.165 254.624));
+  --ui-color-secondary-500: var(--color-blue-500, oklch(62.3% 0.214 259.815));
+  --ui-color-secondary-600: var(--color-blue-600, oklch(54.6% 0.245 262.881));
+  --ui-color-secondary-700: var(--color-blue-700, oklch(48.8% 0.243 264.376));
+  --ui-color-secondary-800: var(--color-blue-800, oklch(42.4% 0.199 265.638));
+  --ui-color-secondary-900: var(--color-blue-900, oklch(37.9% 0.146 265.522));
+  --ui-color-secondary-950: var(--color-blue-950, oklch(28.2% 0.091 267.935));
+  --ui-color-success-50: var(--color-green-50, oklch(98.2% 0.018 155.826));
+  --ui-color-success-100: var(--color-green-100, oklch(96.2% 0.044 156.743));
+  --ui-color-success-200: var(--color-green-200, oklch(92.5% 0.084 155.995));
+  --ui-color-success-300: var(--color-green-300, oklch(87.1% 0.15 154.449));
+  --ui-color-success-400: var(--color-green-400, oklch(79.2% 0.209 151.711));
+  --ui-color-success-500: var(--color-green-500, oklch(72.3% 0.219 149.579));
+  --ui-color-success-600: var(--color-green-600, oklch(62.7% 0.194 149.214));
+  --ui-color-success-700: var(--color-green-700, oklch(52.7% 0.154 150.069));
+  --ui-color-success-800: var(--color-green-800, oklch(44.8% 0.119 151.328));
+  --ui-color-success-900: var(--color-green-900, oklch(39.3% 0.095 152.535));
+  --ui-color-success-950: var(--color-green-950, oklch(26.6% 0.065 152.934));
+  --ui-color-info-50: var(--color-blue-50, oklch(97% 0.014 254.604));
+  --ui-color-info-100: var(--color-blue-100, oklch(93.2% 0.032 255.585));
+  --ui-color-info-200: var(--color-blue-200, oklch(88.2% 0.059 254.128));
+  --ui-color-info-300: var(--color-blue-300, oklch(80.9% 0.105 251.813));
+  --ui-color-info-400: var(--color-blue-400, oklch(70.7% 0.165 254.624));
+  --ui-color-info-500: var(--color-blue-500, oklch(62.3% 0.214 259.815));
+  --ui-color-info-600: var(--color-blue-600, oklch(54.6% 0.245 262.881));
+  --ui-color-info-700: var(--color-blue-700, oklch(48.8% 0.243 264.376));
+  --ui-color-info-800: var(--color-blue-800, oklch(42.4% 0.199 265.638));
+  --ui-color-info-900: var(--color-blue-900, oklch(37.9% 0.146 265.522));
+  --ui-color-info-950: var(--color-blue-950, oklch(28.2% 0.091 267.935));
+  --ui-color-warning-50: var(--color-yellow-50, oklch(98.7% 0.026 102.212));
+  --ui-color-warning-100: var(--color-yellow-100, oklch(97.3% 0.071 103.193));
+  --ui-color-warning-200: var(--color-yellow-200, oklch(94.5% 0.129 101.54));
+  --ui-color-warning-300: var(--color-yellow-300, oklch(90.5% 0.182 98.111));
+  --ui-color-warning-400: var(--color-yellow-400, oklch(85.2% 0.199 91.936));
+  --ui-color-warning-500: var(--color-yellow-500, oklch(79.5% 0.184 86.047));
+  --ui-color-warning-600: var(--color-yellow-600, oklch(68.1% 0.162 75.834));
+  --ui-color-warning-700: var(--color-yellow-700, oklch(55.4% 0.135 66.442));
+  --ui-color-warning-800: var(--color-yellow-800, oklch(47.6% 0.114 61.907));
+  --ui-color-warning-900: var(--color-yellow-900, oklch(42.1% 0.095 57.708));
+  --ui-color-warning-950: var(--color-yellow-950, oklch(28.6% 0.066 53.813));
+  --ui-color-error-50: var(--color-red-50, oklch(97.1% 0.013 17.38));
+  --ui-color-error-100: var(--color-red-100, oklch(93.6% 0.032 17.717));
+  --ui-color-error-200: var(--color-red-200, oklch(88.5% 0.062 18.334));
+  --ui-color-error-300: var(--color-red-300, oklch(80.8% 0.114 19.571));
+  --ui-color-error-400: var(--color-red-400, oklch(70.4% 0.191 22.216));
+  --ui-color-error-500: var(--color-red-500, oklch(63.7% 0.237 25.331));
+  --ui-color-error-600: var(--color-red-600, oklch(57.7% 0.245 27.325));
+  --ui-color-error-700: var(--color-red-700, oklch(50.5% 0.213 27.518));
+  --ui-color-error-800: var(--color-red-800, oklch(44.4% 0.177 26.899));
+  --ui-color-error-900: var(--color-red-900, oklch(39.6% 0.141 25.723));
+  --ui-color-error-950: var(--color-red-950, oklch(25.8% 0.092 26.042));
+  --ui-color-neutral-50: var(--color-slate-50, oklch(98.4% 0.003 247.858));
+  --ui-color-neutral-100: var(--color-slate-100, oklch(96.8% 0.007 247.896));
+  --ui-color-neutral-200: var(--color-slate-200, oklch(92.9% 0.013 255.508));
+  --ui-color-neutral-300: var(--color-slate-300, oklch(86.9% 0.022 252.894));
+  --ui-color-neutral-400: var(--color-slate-400, oklch(70.4% 0.04 256.788));
+  --ui-color-neutral-500: var(--color-slate-500, oklch(55.4% 0.046 257.417));
+  --ui-color-neutral-600: var(--color-slate-600, oklch(44.6% 0.043 257.281));
+  --ui-color-neutral-700: var(--color-slate-700, oklch(37.2% 0.044 257.287));
+  --ui-color-neutral-800: var(--color-slate-800, oklch(27.9% 0.041 260.031));
+  --ui-color-neutral-900: var(--color-slate-900, oklch(20.8% 0.042 265.755));
+  --ui-color-neutral-950: var(--color-slate-950, oklch(12.9% 0.042 264.695));
+  }
+  :root, .light {
+  --ui-primary: var(--ui-color-primary-500);
+  --ui-secondary: var(--ui-color-secondary-500);
+  --ui-success: var(--ui-color-success-500);
+  --ui-info: var(--ui-color-info-500);
+  --ui-warning: var(--ui-color-warning-500);
+  --ui-error: var(--ui-color-error-500);
+  }
+  .dark {
+  --ui-primary: var(--ui-color-primary-400);
+  --ui-secondary: var(--ui-color-secondary-400);
+  --ui-success: var(--ui-color-success-400);
+  --ui-info: var(--ui-color-info-400);
+  --ui-warning: var(--ui-color-warning-400);
+  --ui-error: var(--ui-color-error-400);
+  }
+}
+{"imports":{"#entry":"/_nuxt/BlQ8mjAx.js"}}
+そもそもアプリとは？お年寄りにもわかるように易しく説明します！
+[data-v-3158ba82] .el-input__wrapper,[data-v-3158ba82] .el-select__wrapper{border-bottom:1px solid #e5e7eb!important;box-shadow:none!important}[data-v-3158ba82] .el-input__inner{font-size:16px;height:30px}[data-v-3158ba82] .el-checkbox.el-checkbox--large{aspect-ratio:1/1;height:auto}[data-v-3158ba82] .el-input--large .el-input__wrapper{padding:1px 0}[data-v-3158ba82] .el-select--large .el-select__wrapper{padding:8px 16px 8px 0}[data-v-3158ba82] .el-form-item__error{top:calc(100% + 8px)}[data-v-3158ba82] .el-checkbox__inner{border-color:#949494}
+(function(w,d,s,l,i){
+          w[l]=w[l]||[];
+          w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+          var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),
+              dl=l!='dataLayer'?'&l='+l:'';
+          j.async=true;
+          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M7TPKB2S');
+window.dataLayer = window.dataLayer || []; function gtag() {
+        dataLayer.push(arguments); } gtag('js', new Date()); gtag('config',
+        'G-QSYT3YYLHY');
+{const t=window,e=document.documentElement,c=["dark","light"],n=getStorageValue("localStorage","nuxt-color-mode")||"system";let i=n==="system"?u():n;const r=e.getAttribute("data-color-mode-forced");r&&(i=r),l(i),t["__NUXT_COLOR_MODE__"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=""+o+"",a="";e.classList?e.classList.add(s):e.className+=" "+s,a&&e.setAttribute("data-"+a,o)}function d(o){const s=""+o+"",a="";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,"g"),""),a&&e.removeAttribute("data-"+a)}function f(o){return t.matchMedia("(prefers-color-scheme"+o+")")}function u(){if(t.matchMedia&&f("").media!=="not all"){for(const o of c)if(f(":"+o).matches)return o}return"light"}})();function getStorageValue(t,e){switch(t){case"localStorage":return window.localStorage.getItem(e);case"sessionStorage":return window.sessionStorage.getItem(e);case"cookie":return getCookie(e);default:return null}}function getCookie(t){const c=("; "+window.document.cookie).split("; "+t+"=");if(c.length===2)return c.pop()?.split(";").shift()}
+英語
+ベトナム語
+日本語
+英語
+ベトナム語
+日本語
+経営者・CTO
+部長職・マネージャー
+係長・主任職
+技術専門職
+一般社員
+その他
+No data
+資料をダウンロード
+お問い合わせ
+サービス
+AI
+AIコンサルティング
+AIエンプロイー
+ITコンサルティング
+ソフトウェア受託開発
+ラボ型開発
+サービス 
+事例紹介
+開発事例
+お客様インタビュー
+事例紹介 
+会社概要
+事業内容
+サステナビリティ
+テクノロジー専門家
+職場環境
+ニュース
+Rabilooについて
+会社概要 
+ブログ
+資料をダウンロード
+お問い合わせ
+サービス
+AI
+AIコンサルティング
+AIエンプロイー
+ITコンサルティング
+ソフトウェア受託開発
+ラボ型開発
+事例紹介
+開発事例
+お客様インタビュー
+会社概要
+事業内容
+サステナビリティ
+テクノロジー専門家
+職場環境
+ニュース
+Rabilooについて
+ブログ
+Share
+ 戻る
+ホーム
+ / 
+ブログ
+ / 
+デジタルリテラシー
+ / 
+そもそもアプリとは？お年寄りにもわかるように易しく説明します！
+そもそもアプリとは？お年寄りにもわかるように易しく説明します！
+用語解説
+アプリ開発
+2026/02/23
+2026/02/13
+私たちは普段当たり前のようにスマホの「アプリ」を使っています。
+でも、スマホの使い方がよくわからない人に「アプリとは何か？」を説明しなければならないとしたら、意外と困ってしまいますね。
+そこで、この記事は、あらためて「アプリとは何か」、お年寄りにもわかるように噛み砕いて説明したいと思います。
+また、アプリの種類やメリット、アプリを使用する際の注意点など、アプリに関する基本知識の整理にぜひご活用ください。
+&nbsp;
+Rabiloo（ラビロー）はアプリ開発企業です。小売業・医療・教育の分野の課題を解決するアプリ制作を、提案から開発、運用までワンストップでサポートします。アプリ開発に関するご相談はなんでもお寄せください。
+そもそもアプリとは？
+わたしたちがイメージするいわゆる「アプリ」とは、
+アプリケーションソフトウェア
+（application software）のことです。
+アプリとは簡単に言うと、スマートフォンで特定の機能を実行させるために作られたソフトウェアのことです。例えば「写真を撮る」「地図を調べる」「音楽を聞く」「メールを送る」といった作業を実行します。
+スマートフォンの画面に小さな四角の絵（アイコン）がたくさん表示されていますが、その一つ一つが「アプリ」です。アイコンを指で押すと、アプリが起動します。
+アプリの語源
+アプリの語源は、英語のapplication　で、「〜を適用すること、応用すること」という意味があります。
+スマートフォンは、端末だけでは動きません。スマートフォンにはOS（オペレーティングシステム)という基本ソフトが入っていて、アプリ（応用ソフト）を入れることで、さまざまな機能の実行が可能になります。
+アプリは、英語の“application”を短縮して「
+app
+」と表記されます。
+※パソコンのOSには「Windows」や「Mac OS」、スマートフォンのOSには、iPhoneを動かす「 iOS」やその他の端末を動かす「Android（アンドロイド）」などがあります。
+関連記事：
+▶︎【素朴な疑問】アプリケーションとソフトウェアの違いって？
+アプリの入れ方
+スマホ（スマートフォン）は大きく分けて、 Apple社が開発した、iOS（アイオーエス）というOS（基本ソフト）で動かすiPhoneと、Google社が開発したAndroid(アンドロイド)というOSで動かす、iPhone以外の端末に分けられます。
+スマホには元々インストールされているメールやカメラなどの基本アプリがありますが、自分のやりたいことに応じて、専用のアプリをダウンロードして自分のスマホに好きな機能を追加できます。
+ダウンロードとは
+ダウンロードとは、インターネットを介して、ネットワーク上にあるアプリのファイルを、スマホやパソコンにコピーして保存するという意味です。
+インストールとは
+ファイルをダウンロードしただけではアプリは使えません。ダウンロードして端末に保存したアプリのデータを読み込んでスマホで使えるようにする必要があります。アプリを端末で使えるようにする作業を「インストールする」と言います。
+以前は、パソコンにCDやDVDなどに保存されたデータをパソコンに「インストール」していましたが、今ではインターネットでダウンロードしてインストールするのが一般的になりました。
+どうやってアプリを入れる？
+iPhoneの場合、「app store」という青色のアイコンを押すと、アプリのストアに行けます。Androidのスマホからは、「Play ストア」でアプリが取得できます。
+アプリには無料のものと、有料のものがあります。
+無料でダウンロードできるのがほとんどですが、「アプリ内課金」といって、ダウンロードした後に有料プランに切り替えるものもあるので注意が必要です。
+アプリの種類
+「アプリ」とひとことに言ってもさまざまな種類のアプリが存在します。
+ここで、主なアプリの種類を3つ紹介します。
+スマートフォンアプリ（スマホアプリ）
+webアプリ
+パソコンアプリ
+の３種類です。
+スマートフォンアプリ（スマホアプリ）
+スマホアプリとは、スマートフォンにダウンロードして使うアプリケーションソフトウェアのことです。スマートフォン端末上にインストールして使います。
+ネット環境がなくても利用できるアプリもあります。
+webアプリ
+webアプリとは、インターネットのブラウザ（Webサイトを見るためのソフト）上で動作するアプリケーションです。
+例えば、G-mailやYouTube、Facebookなどのアプリはブラウザソフトからも利用することができます。
+インターネットができればすぐに使え、端末にアプリをインストールする必要がありません。
+ネット環境があれば、どの端末からでも利用できます。
+パソコンアプリ
+パソコンアプリは、以前は「ソフトウェア」「ソフト」と呼ばれていましたが、最近では単に「アプリ」と呼ばれることが多くなりました。
+「ソフトウェア」という用語には、WindowsやMac OSなどの基本ソフトウェア（OS）も含まれますが、アプリはOS上で動くソフトウェアに限定して用いられます。
+アプリの例
+アプリは細かい用途に分けて、機能が設計されています。
+以下はよく使うアプリの例です。
+メールアプリ
+SNSアプリ
+カメラ・写真アプリ
+ニュースアプリ
+音楽アプリ
+お天気アプリ
+動画アプリ
+日本でよく使われてるスマホアプリには、LINE、Facebook、InstagramなどのSNSアプリ、Youtubeなどの動画アプリ、iOSやAndroidに初期搭載されている、カメラアプリや写真アプリなどがあります。
+また、よく利用する
+店舗のポイントアプリ
+なども使う機会が増えてきました。
+アプリとWebサイトの違い
+スマートフォンでインターネットが見られるのだから、わざわざアプリを作成する意味があるのだろうかと思われるかもしれません。ここで、アプリとWebサイトの違いについて少し考えてみましょう。
+アプリは特定の機能に特化している
+Webサイトは、ページを閲覧したり、表示させたりすることが主な目的ですが、アプリは、「動画を見る」「計算をする」「写真を撮る」「現在地のお天気をすぐに表示させる」「地図を調べる」などの特定の機能に特化して設計されています。
+インストールするかしないか
+アプリは端末にインストールしなければ使えません。しかしWebアプリは、端末にインストールしなくても使えます。ただし、インターネット環境が必要になります。
+アプリを使うメリット
+では、アプリを使うメリットは何でしょうか。
+以下のメリットが考えられます。
+すぐ使える
+ネット環境がなくても使えるものもある
+アップデートで改良される
+すぐに使える
+アプリを端末にインストールするメリットはすぐにアクセスできるという点です。
+webアプリなら、一旦Webサイトを開いて、そこから目的のアプリにアクセスしなければなりません。
+しかし、アプリをインストールしていれば、アプリのアイコンを押すだけですぐに目的の作業を行うことができます。
+例えば、暇つぶしに何か動画を見たい時は、Webサイトから検索して動画を見るより、Youtubeのアプリを起動させる方が圧倒的に早くて便利です。
+ネット環境がなくても使えるものもある
+アプリの種類によりますが、オフライン（インターネット環境がない）でも利用できるものがあります。
+ネット環境があるときに、アプリに必要な情報をまとめてダウンロードしておくことで、インターネットに繋がなくても利用できるアプリもあります。
+アップデートで改良される
+アプリは、定期的にバージョンアップされ、不具合の修正や新機能の追加などのアップデートを受けることができます。
+また、OS（スマートフォンの基本ソフト）が新しくなっても、対応できるようにすぐにアップデートが公開されますので、安心して利用できます。
+アプリを利用する際の注意点
+アプリをダウンロードする前に、アプリの評判やレビューを読むことをお勧めします。
+中には、詐欺に近いような悪質なアプリも紛れ込んでいるため、ダウンロードの前には注意が必要です。
+個人で開発されたような無料アプリには、セキュリティ上の危険も潜んでいることもあります。ダウンロードする際は、アプリの製造元が信頼できる企業のものか調べましょう。
+また、無料でダウンロードできるものの、巧みに有料プランへ誘導される悪質なアプリもあるので注意が必要です。
+ダウンロードするときには、スマートフォンに詳しい若い人に見てもらって安全を確認するようにしてください。
+まとめ
+この記事では、今さら聞きにくい「アプリって何？」というテーマで記事をお届けしました。
+アプリとは、「アプリケーション・ソフトウェア」のことで、特定の機能に特化した専用のソフトウェアのことです。
+スマホアプリ以外にもwebアプリやパソコンアプリも広く利用されています。
+アプリは自分たちの会社で作ることも可能です。
+弊社Rabiloo（ラビロー）は、アプリ制作会社です。
+自社の業務を効率化するための社員向けのアプリ、集客をアップさせるための店舗オリジナル公式アプリなど、御社のご要望、予算に合わせて開発を承ります。
+中小やスタートアップ企業様からもたくさんのご依頼を受け、長くお付き合いさせていただいております。ぜひお気軽にご相談ください。
+&nbsp;
+関連記事：
+▶︎【素朴な疑問】アプリケーションとソフトウェアの違いって？
+▶︎【DXのXとは？】ﾄﾗﾝｽﾌｫｰﾒｰｼｮﾝがなぜXになるか意味を解説！
+▶︎今さら聞きにくい【IT化とDXの違い】を初心者向けにわかりやすく解説！
+Share
+Kakimoto Kota
+Rabilooのオウンドメディアで制作ディレクターを担当。日越翻訳、記事、動画、SNS、コンテンツの戦略立案から制作まで行う。2015年よりベトナム・ハノイ在住
+ブログを探す
+中小企業
+DXはスモールスタートが王道！中小企業は何から手を付けたらいいか？
+Kakimoto Kota
+2026/02/25
+2026/03/23
+AI開発
+AIエージェント
+AIエンプロイー（AI Employee）とは？「AI社員」を迎える時代へ
+Kakimoto Kota
+2025/07/17
+2025/12/24
+業務効率化
+AI開発
+AI
+【2025年】AIエージェントとは？生成AIとの違いをわかりやすく解説！
+Kakimoto Kota
+2025/05/05
+2026/02/24
+お問い合わせ
+お名前
+ *
+電話番号
+ *
+メールアドレス
+ *
+会社名
+ *
+役職
+ *
+選択してください
+お問い合わせの内容
+ *
+*
+Rabilooが
+顧客情報プライバシーポリシー
+に従って、個人データの保存及び処理をすることに同意します。
+送信する
+ブログを探す
+Tags
+IoT開発
+開発パートナー選定
+クラウドサービス
+開発事例
+EC構築
+ラボ型開発
+ブリッジSE
+アジャイル
+Webアプリ開発
+プログラミング言語
+システム開発
+React Native
+ソフトウェアテスト
+OCR
+セキュリティ
+IT人材不足
+デジタルサイネージ
+フレームワーク
+AI開発
+エンジニア単価
+ニュース
+アプリ開発
+コスト削減
+プロジェクトマネジメント
+エンジニア
+顔認識技術
+用語解説
+業務効率化
+バックエンド
+フロントエンド
+Web開発
+開発効率化
+中小企業
+DXはスモールスタートが王道！中小企業は何から手を付けたらいいか？
+Kakimoto Kota
+2026/02/25
+2026/03/23
+AI開発
+AIエージェント
+AIエンプロイー（AI Employee）とは？「AI社員」を迎える時代へ
+Kakimoto Kota
+2025/07/17
+2025/12/24
+業務効率化
+AI開発
+AI
+【2025年】AIエージェントとは？生成AIとの違いをわかりやすく解説！
+Kakimoto Kota
+2025/05/05
+2026/02/24
+株式会社Rabiloo Japan
+〒252-0216 神奈川県 相模原市 中央区 清新一丁目1番17号荒木ビル3階
+042-704-8401 /  070-8456-9696
+Rabiloo Co., Ltd.
+3階、B1棟、Roman Plaza, To Huu, Dai Mo, Ha Noi, Viet Nam
+(+84)90-1134-886
+[email&#160;protected]
+サービス
+AI
+AIコンサルティング
+AIエンプロイー
+ITコンサルティング
+ソフトウェア受託開発
+ラボ型開発
+会社概要
+事業内容
+サステナビリティ
+テクノロジー専門家
+職場環境
+ニュース
+Rabilooについて
+事例紹介
+開発事例
+お客様インタビュー
+ブログ
+サービス利用規約
+顧客情報プライバシーポリシー
+フォローする
+ © 
+2026
+ Rabiloo. All rights reserved. 
+","what-is-the-application",null,4,43,false,"blog","ja","https://api.weekly.vn/files/1/public/1770964650477_79ac4952-33ad-4be4-85fe-dab44d45a692","2026/02/13","2026/02/23",{"id":13,"name":21,"slug":22},"デジタルリテラシー","trends-and-technology",[24,27],{"id":25,"name":26},560,"用語解説",{"id":28,"name":29},565,"アプリ開発",{"id":31,"name":32,"avatar":33,"description":34},1,"Kakimoto Kota","https://api.weekly.vn/files/1/public/1729070219138_ff15097d-78f9-41cd-8775-7fbd6f4820f5","Rabilooのオウンドメディアで制作ディレクターを担当。日越翻訳、記事、動画、SNS、コンテンツの戦略立案から制作まで行う。2015年よりベトナム・ハノイ在住",{"latestBlog":36},{"data":37,"page":31,"pageSize":12,"totalPages":31,"total":95},[38,56,74],{"id":39,"title":40,"description":41,"slug":42,"category_id":43,"hashtag_text":44,"is_on_top":45,"is_news":14,"blog_type":15,"status":46,"language":16,"image":47,"created_at":48,"updated_at":49,"category":50,"tags":52,"author":55},1087,"DXはスモールスタートが王道！中小企業は何から手を付けたらいいか？","中小企業のDXは何から始めるべきか？業務のデータ化から価値創出まで、失敗しない3ステップで解説します。DXが途中で止まる理由と、スモールスタートで確実に前進する方法を整理しました。","dx-small-start",44,"中小企業",true,"publish","https://api.weekly.vn/files/1/public/1773995881769_b9900c58-1b87-42e2-b635-297e4472d5a2","2026/02/25","2026/03/23",{"id":43,"slug":51},"ai-tech",[53],{"id":54,"name":44},679,{"id":31,"name":32,"avatar":33},{"id":57,"title":58,"description":59,"slug":60,"category_id":43,"hashtag_text":61,"is_on_top":45,"is_news":14,"blog_type":15,"status":46,"language":16,"image":62,"created_at":63,"updated_at":64,"category":65,"tags":66,"author":73},1050,"AIエンプロイー（AI Employee）とは？「AI社員」を迎える時代へ","AIエンプロイーとは、AIを単なるツールではなく、組織の一員として業務を担う“仮想従業員”として活用する新しいアプローチです。Rabilooが提唱するこの概念を、AIエージェントとの違いを明確にし、企業が導入するためのステップを実践的に解説します。","ai-employee","AIエージェント,AI開発","https://api.weekly.vn/files/1/public/1752723022895_6ceb50d6-5c5e-4339-a3e3-7b03b16d1ffd","2025/07/17","2025/12/24",{"id":43,"slug":51},[67,70],{"id":68,"name":69},568,"AI開発",{"id":71,"name":72},675,"AIエージェント",{"id":31,"name":32,"avatar":33},{"id":75,"title":76,"description":77,"slug":78,"category_id":79,"hashtag_text":80,"is_on_top":45,"is_news":14,"blog_type":15,"status":46,"language":16,"image":81,"created_at":82,"updated_at":83,"category":84,"tags":86,"author":94},1024,"【2025年】AIエージェントとは？生成AIとの違いをわかりやすく解説！","AIエージェントとは何か？チャットボットや生成AI、AIアシスタントとの違いをわかりやすく解説。自律的に“考えて動くAI”として注目されるAIエージェントの仕組みや導入ステップ、業務別の活用例まで、ビジネス目線で丁寧に紹介します。","what-is-ai-agent",46,"AI,AI開発,業務効率化","https://api.weekly.vn/files/1/public/1746429840289_dd298006-6183-4850-a11a-a8c791b34dc0","2025/05/05","2026/02/24",{"id":79,"slug":85},"devops",[87,90,91],{"id":88,"name":89},559,"業務効率化",{"id":68,"name":69},{"id":92,"name":93},636,"AI",{"id":31,"name":32,"avatar":33},3,{"tags":97},{"data":98,"page":31,"pageSize":245,"totalPages":31,"total":246},[99,105,111,116,122,128,134,138,143,148,152,157,161,165,169,173,178,182,186,189,193,198,202,206,211,216,220,223,227,231,236,240],{"id":100,"name":101,"site_id":12,"blog_count":102,"language":16,"color":103,"slug":11,"description":11,"created_at":104,"updated_at":104},622,"IoT開発","3","#34AFD7","2024-10-23T08:07:33.478Z",{"id":106,"name":107,"site_id":12,"blog_count":108,"language":16,"color":109,"slug":11,"description":11,"created_at":110,"updated_at":110},621,"開発パートナー選定","26","#D33E86","2024-10-21T10:27:33.565Z",{"id":112,"name":113,"site_id":12,"blog_count":114,"language":16,"color":103,"slug":11,"description":11,"created_at":115,"updated_at":115},620,"クラウドサービス","6","2024-10-21T09:44:31.496Z",{"id":117,"name":118,"site_id":12,"blog_count":119,"language":16,"color":120,"slug":11,"description":11,"created_at":121,"updated_at":121},619,"開発事例","4","#A48AEE","2024-10-21T08:53:27.166Z",{"id":123,"name":124,"site_id":12,"blog_count":125,"language":16,"color":126,"slug":11,"description":11,"created_at":127,"updated_at":127},618,"EC構築","9","#D45151","2024-10-21T08:39:03.421Z",{"id":129,"name":130,"site_id":12,"blog_count":131,"language":16,"color":132,"slug":11,"description":11,"created_at":133,"updated_at":133},589,"ラボ型開発","12","","2024-10-16T06:22:44.847Z",{"id":135,"name":136,"site_id":12,"blog_count":102,"language":16,"color":132,"slug":11,"description":11,"created_at":137,"updated_at":137},588,"ブリッジSE","2024-10-16T06:22:44.845Z",{"id":139,"name":140,"site_id":12,"blog_count":141,"language":16,"color":132,"slug":11,"description":11,"created_at":142,"updated_at":142},586,"アジャイル","5","2024-10-16T06:22:44.837Z",{"id":144,"name":145,"site_id":12,"blog_count":146,"language":16,"color":132,"slug":11,"description":11,"created_at":147,"updated_at":147},585,"Webアプリ開発","10","2024-10-16T06:22:44.828Z",{"id":149,"name":150,"site_id":12,"blog_count":102,"language":16,"color":132,"slug":11,"description":11,"created_at":151,"updated_at":151},584,"プログラミング言語","2024-10-16T06:22:44.817Z",{"id":153,"name":154,"site_id":12,"blog_count":155,"language":16,"color":132,"slug":11,"description":11,"created_at":156,"updated_at":156},583,"システム開発","19","2024-10-16T06:22:44.807Z",{"id":158,"name":159,"site_id":12,"blog_count":119,"language":16,"color":132,"slug":11,"description":11,"created_at":160,"updated_at":160},582,"React Native","2024-10-16T06:22:44.797Z",{"id":162,"name":163,"site_id":12,"blog_count":114,"language":16,"color":132,"slug":11,"description":11,"created_at":164,"updated_at":164},581,"ソフトウェアテスト","2024-10-16T06:22:44.745Z",{"id":166,"name":167,"site_id":12,"blog_count":114,"language":16,"color":132,"slug":11,"description":11,"created_at":168,"updated_at":168},578,"OCR","2024-10-16T06:22:44.733Z",{"id":170,"name":171,"site_id":12,"blog_count":119,"language":16,"color":132,"slug":11,"description":11,"created_at":172,"updated_at":172},572,"セキュリティ","2024-10-16T06:22:44.721Z",{"id":174,"name":175,"site_id":12,"blog_count":176,"language":16,"color":132,"slug":11,"description":11,"created_at":177,"updated_at":177},571,"IT人材不足","15","2024-10-16T06:22:44.713Z",{"id":179,"name":180,"site_id":12,"blog_count":141,"language":16,"color":132,"slug":11,"description":11,"created_at":181,"updated_at":181},570,"デジタルサイネージ","2024-10-16T06:22:44.659Z",{"id":183,"name":184,"site_id":12,"blog_count":114,"language":16,"color":132,"slug":11,"description":11,"created_at":185,"updated_at":185},569,"フレームワーク","2024-10-16T06:22:44.655Z",{"id":68,"name":69,"site_id":12,"blog_count":187,"language":16,"color":132,"slug":11,"description":11,"created_at":188,"updated_at":188},"24","2024-10-16T06:22:44.643Z",{"id":190,"name":191,"site_id":12,"blog_count":119,"language":16,"color":132,"slug":11,"description":11,"created_at":192,"updated_at":192},567,"エンジニア単価","2024-10-16T06:22:44.641Z",{"id":194,"name":195,"site_id":12,"blog_count":119,"language":16,"color":196,"slug":11,"description":11,"created_at":197,"updated_at":197},566,"ニュース","#2A7EB6","2024-10-16T06:22:44.639Z",{"id":28,"name":29,"site_id":12,"blog_count":199,"language":16,"color":200,"slug":11,"description":11,"created_at":201,"updated_at":201},"21","#525BCE","2024-10-16T06:22:44.633Z",{"id":203,"name":204,"site_id":12,"blog_count":141,"language":16,"color":103,"slug":11,"description":11,"created_at":205,"updated_at":205},564,"コスト削減","2024-10-16T06:22:44.629Z",{"id":207,"name":208,"site_id":12,"blog_count":209,"language":16,"color":196,"slug":11,"description":11,"created_at":210,"updated_at":210},563,"プロジェクトマネジメント","16","2024-10-16T06:22:44.627Z",{"id":212,"name":213,"site_id":12,"blog_count":214,"language":16,"color":126,"slug":11,"description":11,"created_at":215,"updated_at":215},562,"エンジニア","18","2024-10-16T06:22:44.624Z",{"id":217,"name":218,"site_id":12,"blog_count":141,"language":16,"color":109,"slug":11,"description":11,"created_at":219,"updated_at":219},561,"顔認識技術","2024-10-16T06:22:44.621Z",{"id":25,"name":26,"site_id":12,"blog_count":221,"language":16,"color":103,"slug":11,"description":11,"created_at":222,"updated_at":222},"22","2024-10-16T06:22:44.610Z",{"id":88,"name":89,"site_id":12,"blog_count":224,"language":16,"color":225,"slug":11,"description":11,"created_at":226,"updated_at":226},"29","#C6A73A","2024-10-16T06:22:44.609Z",{"id":228,"name":229,"site_id":12,"blog_count":146,"language":16,"color":126,"slug":11,"description":11,"created_at":230,"updated_at":230},558,"バックエンド","2024-10-16T06:22:44.606Z",{"id":232,"name":233,"site_id":12,"blog_count":234,"language":16,"color":200,"slug":11,"description":11,"created_at":235,"updated_at":235},557,"フロントエンド","8","2024-10-16T06:22:44.604Z",{"id":237,"name":238,"site_id":12,"blog_count":125,"language":16,"color":196,"slug":11,"description":11,"created_at":239,"updated_at":239},555,"Web開発","2024-10-16T06:22:44.602Z",{"id":241,"name":242,"site_id":12,"blog_count":243,"language":16,"color":103,"slug":11,"description":11,"created_at":244,"updated_at":244},554,"開発効率化","31","2024-10-16T06:22:44.596Z",1000,32,["Reactive",248],{"$si18n:cached-locale-configs":249,"$si18n:resolved-locale":132,"$scolor-mode":250,"_layout":252},{},{"preference":251,"value":251,"unknown":45,"forced":14},"system","jp",["Set"],["ShallowReactive",255],{"$f3WWZYmHmlp4qTPT6zIRJNyuTPsfWPkYp8yS-ZxRle8c":-1,"$fTLg_7wrXXur5kBiMUnNJgsVi4ve6NlClI5eH6hfN1tE":-1,"$fKM7Mcb5CyCTOcedsYt15vPzuUyQhsDqq7p4VHuNNZaU":-1},"/blog/what-is-the-application"]
+window.__NUXT__={};window.__NUXT__.config={public:{turnstile:{siteKey:"0x4AAAAAAADkxwzOC1nNhgqs"},"nuxt-scripts":{version:"",defaultScriptOptions:{trigger:"onNuxtReady"}},i18n:{baseUrl:"",defaultLocale:"en",rootRedirect:"",redirectStatusCode:302,skipSettingLocaleOnNavigate:false,locales:[{code:"en",iso:"en-US",name:"English",domains:["rabiloo.com","rabiloo-en.local:3000","rabiloo-en.local:3001"],defaultForDomains:["rabiloo.com"],language:""},{code:"ja",domains:["rabiloo.co.jp","rabiloo-jp.local:3000","rabiloo-jp.local:3001"],defaultForDomains:["rabiloo.co.jp"],iso:"ja-JP",name:"Japanese",language:""},{code:"vi",domains:["rabiloo.com.vn","rabiloo-vn.local:3000","rabiloo-vn.local:3001"],defaultForDomains:["rabiloo.com.vn"],iso:"vi-VN",name:"Vietnamese",language:""}],detectBrowserLanguage:false,experimental:{localeDetector:"",typedPages:true,typedOptionsAndMessages:false,alternateLinkCanonicalQueries:true,devCache:false,cacheLifetime:"",stripMessagesPayload:false,preload:false,strictSeo:false,nitroContextDetection:true},domainLocales:{en:{domain:""},ja:{domain:""},vi:{domain:""}}}},app:{baseURL:"/",buildId:"8c5002d6-c09b-4005-96f1-abe2ee50e9a5",buildAssetsDir:"/_nuxt/",cdnURL:""}}
