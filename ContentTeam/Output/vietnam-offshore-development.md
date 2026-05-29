@@ -197,3 +197,8 @@ Rabilooでは、プロジェクト開始前に「コミュニケーション設�
 
 [Rabilooに相談する →](https://rabiloo.co.jp/contact-us)
 
+---
+
+> **関連記事**
+> - [ベトナムのアプリ・システム開発会社を探すなら（実績と選び方）](https://rabiloo.co.jp/blog/app-development-company)
+> - [ベトナムのラボ型開発（ODC）を成功させるポイント](https://rabiloo.co.jp/blog/vietnam-laboratory-based-development)
