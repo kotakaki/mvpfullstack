@@ -75,7 +75,7 @@ description: ベトナム語記事制作エンジン（キーワードから構�
 3. **Out of Scope**: (Vietnamese)
 4. **Title Ideas (3 options)**: (Vietnamese)
 5. **Metadata**: Slug, Meta Description (Vietnamese)
-6. **Introduction Draft**: ①Empathy → ②Redefine Problem → ③Rabiloo's Approach → ④Article Value (Vietnamese)
+6. **Introduction Draft**: ①Empathy → ②Redefine Problem (Crucial: Do NOT use a consultant tone that lectures the reader "You are wrong". Instead, redefine the core problem by sharing a field discovery: "In our hands-on experience, we found that the root cause is actually Y, not X.") → ③Rabiloo's Approach → ④Article Value (4 items) (Vietnamese)
 7. **Heading Structure (H2/H3)**: One-line summary for each section and placement of primary information. **Must follow First Answer Rule.** (Vietnamese)
 8. **Conclusion & CTA**: (Vietnamese)
 
@@ -89,7 +89,10 @@ description: ベトナム語記事制作エンジン（キーワードから構�
 
 ユーザーの承認後、**1つのH2セクションずつ**順番に執筆する。「次をお願い」と言われるまで次のセクションは絶対に書かない。
 
-**セクションの基本構造:**
+**【最重要】導入文と本文（H2）の構造分離**
+- 導入文（タイトル直下の文章）を執筆する際は、後述の「セクションの基本構造」を適用してはいけません。導入文は必ず、PHASE 1で定義した「導入文の4構成（①Empathy → ②Practical Perspective → ③Rabiloo's Approach → ④Article Value の4項目箇条書き）」を完全に網羅して出力してください。特に④の箇条書きの欠落に注意すること。
+
+**セクション（H2以下）の基本構造:**
 - **Lead sentence**: 読者の悩みや背景（1〜2文）
 - **Atomic Answer**: 結論（簡潔に太字で強調）
 - **Detailed Explanation**: 論理的な深掘り（図表やリストを活用）
