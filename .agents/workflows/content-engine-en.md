@@ -39,6 +39,7 @@ description: 英語記事制作エンジン（キーワードから構成承認�
   - **H2:1のFirst Answer Rule（最重要）**: 最初のH2見出しには必ずメインKWを含める。そしてそのH2直下の本文1行目で、検索意図に対する直接的な定義・回答を即答すること（例：`[Keyword] is a system that...`）。アナロジーや背景説明から本文を始めるのは禁止。
   - **H2全体のKW出現ルール**: すべてのH2にメインKWまたは関連KWを含める。
 - **表現の禁止事項（Web適正化）**: "In the next chapter" や "As mentioned in the previous section" といった書籍的表現は使用しない。各見出しは独立した「セクション」として扱う。
+- **エバーグリーン原則（年号表記の禁止）**: 原則として、タイトル、見出し、本文に特定の年号（例：2026年など）を含めてはいけません。記事の賞味期限が短くなり修正コストがかかるためです。ただし、法改正や年度ごとの市場調査レポートなど、最新情報であることが価値に直結する例外的なケースのみ年号の使用を許可します。
 - **強調フォーマット**: 英語の標準的なマークダウンを用いる。太字は `**bold text**` のように記述し、不自然な空白を含めない。
 - **社名表記**: 初出は `Rabiloo`, 以後も `Rabiloo` で統一する。
 
@@ -73,7 +74,7 @@ description: 英語記事制作エンジン（キーワードから構成承認�
 1. **Target Audience & Search Intent**: (English)
 2. **Article Type**: (Type A/B/C)
 3. **Out of Scope**: (English)
-4. **Title Ideas (3 options)**: (English)
+4. **Title Ideas (3 options)**: (English) （※エバーグリーン原則に従い、年号は含めないこと）
 5. **Metadata**: Slug, Meta Description (English)
 6. **Introduction Draft**: ①Empathy → ②Redefine Problem (Crucial: Do NOT use a consultant tone that lectures the reader "You are wrong". Instead, redefine the core problem by sharing a field discovery: "In our hands-on experience, we found that the root cause is actually Y, not X.") → ③Rabiloo's Approach → ④Article Value (4 items) (English)
 7. **Heading Structure (H2/H3)**: One-line summary for each section and placement of primary information. **Must follow First Answer Rule.** (English)
