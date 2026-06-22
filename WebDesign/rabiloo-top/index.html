@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabiloo | 多店舗DX・AIトランスフォーメーション パートナー</title>
+  <meta name="description" content="多店舗経営のDX・AI導入パートナー。整骨院54店舗のDXを支えた実績。業界の課題に合わせたPOC製品ですぐに始められます。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #003bba;
+      --primary-dark: #002a8a;
+      --primary-light: rgba(0, 59, 186, 0.06);
+      --accent: #ff9900;
+      --accent-light: rgba(255, 153, 0, 0.08);
+      --text: #1a1a1a;
+      --text-sub: #555555;
+      --text-muted: #888888;
+      --border: #dcdcdc;
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --radius: 8px;
+      --radius-lg: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      color: var(--text);
+      background: var(--surface);
+      line-height: 1.7;
+      font-weight: 500;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 64px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+    }
+    .header-inner {
+      max-width: 1120px; margin: 0 auto; padding: 0 24px;
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px; font-weight: 900;
+      color: var(--primary); letter-spacing: -0.03em;
+    }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { font-size: 14px; font-weight: 700; color: var(--text-sub); transition: color 0.2s; }
+    nav a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--primary); color: #fff !important;
+      padding: 10px 20px; border-radius: var(--radius);
+      font-size: 14px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 140px 24px 80px;
+      background: var(--bg);
+    }
+    .hero-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 13px; font-weight: 700; color: var(--primary);
+      background: var(--primary-light);
+      padding: 6px 14px; border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 40px; font-weight: 900; line-height: 1.4;
+      letter-spacing: 0.02em; margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--primary); }
+    .hero-desc {
+      font-size: 16px; color: var(--text-sub); margin-bottom: 32px; line-height: 1.8;
+    }
+    .hero-actions { display: flex; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 14px 28px; border-radius: var(--radius);
+      font-size: 15px; font-weight: 700; transition: all 0.2s;
+    }
+    .btn-fill { background: var(--primary); color: #fff; }
+    .btn-fill:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+    .btn-outline:hover { border-color: var(--primary); }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* Hero visual card */
+    .hero-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .hero-card-label { font-size: 13px; color: var(--text-muted); font-weight: 700; margin-bottom: 8px; }
+    .hero-card-stat { display: flex; align-items: baseline; gap: 6px; margin-bottom: 16px; }
+    .hero-card-num { font-family: 'Inter', sans-serif; font-size: 56px; font-weight: 900; color: var(--primary); line-height: 1; }
+    .hero-card-unit { font-size: 18px; font-weight: 700; color: var(--text); }
+    .hero-card-desc { font-size: 14px; color: var(--text-sub); margin-bottom: 20px; }
+    .mini-bars { display: flex; flex-direction: column; gap: 8px; }
+    .mini-bar { display: flex; align-items: center; gap: 8px; }
+    .mini-bar-label { font-size: 12px; color: var(--text-muted); width: 72px; flex-shrink: 0; }
+    .mini-bar-track { flex: 1; height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+    .mini-bar-fill { height: 100%; border-radius: 3px; background: var(--primary); }
+    .mini-bar-fill.accent { background: var(--accent); }
+
+    /* ─── NUMBERS BAR ─── */
+    .numbers {
+      background: var(--primary); color: #fff; padding: 40px 24px;
+    }
+    .numbers-grid {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;
+    }
+    .num-val {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px; font-weight: 900; line-height: 1; margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .num-val span { font-size: 18px; }
+    .num-label { font-size: 13px; font-weight: 500; opacity: 0.9; }
+
+    /* ─── SECTION ─── */
+    .section { padding: 80px 24px; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-tag {
+      display: inline-block; font-size: 13px; font-weight: 700; color: var(--primary);
+      background: var(--primary-light); padding: 5px 12px; border-radius: 4px; margin-bottom: 12px;
+    }
+    .section h2 { font-size: 32px; font-weight: 900; line-height: 1.4; margin-bottom: 12px; }
+    .section-sub { font-size: 15px; color: var(--text-sub); max-width: 640px; margin: 0 auto; }
+
+    /* ─── INDUSTRY HUB ─── */
+    .industry-grid {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .industry-card {
+      display: block;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      transition: all 0.25s;
+    }
+    .industry-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 8px 24px rgba(0,59,186,0.08);
+      transform: translateY(-3px);
+    }
+    .industry-icon { font-size: 32px; margin-bottom: 16px; }
+    .industry-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .industry-problems { font-size: 14px; color: var(--text-sub); margin-bottom: 16px; }
+    .industry-problems li { margin-bottom: 4px; list-style: none; }
+    .industry-problems li::before { content: '・'; color: var(--primary); }
+    .industry-link {
+      font-size: 14px; font-weight: 700; color: var(--primary);
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+
+    /* ─── POC HIGHLIGHT ─── */
+    .poc-grid {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .poc-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+      transition: all 0.25s; display: flex; flex-direction: column;
+    }
+    .poc-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 6px 20px rgba(255,153,0,0.1);
+      transform: translateY(-3px);
+    }
+    .poc-icon { font-size: 28px; margin-bottom: 12px; }
+    .poc-name { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .poc-desc { font-size: 13px; color: var(--text-sub); flex-grow: 1; margin-bottom: 12px; }
+    .poc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .poc-tag {
+      font-size: 11px; font-weight: 700; padding: 3px 8px;
+      border-radius: 4px; background: var(--bg); color: var(--text-sub);
+    }
+
+    /* ─── CASE STUDIES ─── */
+    .case-grid {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .case-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      display: grid; grid-template-columns: 200px 1fr;
+      transition: all 0.25s;
+    }
+    .case-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .case-thumb {
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+    }
+    .case-body { padding: 24px; }
+    .case-tags { display: flex; gap: 6px; margin-bottom: 8px; }
+    .case-tag-item { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; background: var(--primary-light); color: var(--primary); }
+    .case-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; line-height: 1.5; }
+    .case-desc { font-size: 13px; color: var(--text-sub); margin-bottom: 12px; }
+    .case-link { font-size: 14px; font-weight: 700; color: var(--primary); }
+
+    /* ─── WHY RABILOO ─── */
+    .why-grid {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+    }
+    .why-item { text-align: center; }
+    .why-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; margin: 0 auto 16px;
+    }
+    .why-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .why-desc { font-size: 14px; color: var(--text-sub); text-align: left; }
+
+    /* ─── BOTTOM CTA ─── */
+    .bottom-cta {
+      background: var(--primary); color: #fff; padding: 80px 24px; text-align: center;
+    }
+    .bottom-cta h2 { font-size: 32px; font-weight: 900; margin-bottom: 12px; }
+    .bottom-cta p { font-size: 16px; opacity: 0.9; margin-bottom: 32px; }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; color: var(--primary);
+      padding: 16px 32px; border-radius: var(--radius);
+      font-size: 16px; font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+
+    /* ─── FOOTER ─── */
+    footer { background: #0a0e1a; color: rgba(255,255,255,0.7); padding: 48px 24px 32px; }
+    .footer-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto auto; gap: 64px;
+      padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+    .footer-logo { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+    .footer-tagline { font-size: 13px; }
+    .footer-col-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .footer-col a { display: block; font-size: 13px; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-copy { text-align: center; font-size: 12px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .industry-grid { grid-template-columns: repeat(2, 1fr); }
+      .poc-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-grid { grid-template-columns: 1fr; }
+      .case-card { grid-template-columns: 160px 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 28px; }
+      .section h2 { font-size: 24px; }
+      .industry-grid, .poc-grid { grid-template-columns: 1fr; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .num-val { font-size: 28px; }
+      nav .hide-sp { display: none; }
+      .case-card { grid-template-columns: 1fr; }
+      .case-thumb { height: 120px; }
+    }
+
+    /* ─── FADE IN ─── */
+    .fi { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fi.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">Rabiloo</a>
+    <nav>
+      <a href="#industry" class="hide-sp">業界別ソリューション</a>
+      <a href="#poc" class="hide-sp">POC製品</a>
+      <a href="#cases" class="hide-sp">実績</a>
+      <a href="#" class="nav-cta">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">AIoT Development Partner / ベトナムTOP10認定</div>
+      <h1>
+        多店舗経営のDX・AI導入、<br>
+        <em>業界の課題に合った方法</em>で<br>
+        始めませんか。
+      </h1>
+      <p class="hero-desc">
+        「何から手をつければいいかわからない」——それでも大丈夫です。<br>
+        Rabilooは、整骨院・小売・飲食・物流など、<strong>業界ごとの現場課題</strong>を深く理解し、<br>
+        すぐに試せるPOC製品から、事業成長に伴走するDX・AIソリューションまでご提供します。
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-fill">
+          無料DX診断を受ける
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a href="#poc" class="btn btn-outline">POC製品を見る</a>
+      </div>
+    </div>
+    <div class="hero-card fi">
+      <div class="hero-card-label">導入実績ハイライト</div>
+      <div class="hero-card-stat">
+        <div class="hero-card-num">54</div>
+        <div class="hero-card-unit">店舗のDXを伴走支援</div>
+      </div>
+      <div class="hero-card-desc">整骨院チェーン「ほねごり」様。予約・POS・サイネージ・AI解析まで10年間の継続開発。</div>
+      <div class="mini-bars">
+        <div class="mini-bar">
+          <span class="mini-bar-label">予約効率</span>
+          <div class="mini-bar-track"><div class="mini-bar-fill" style="width:88%"></div></div>
+        </div>
+        <div class="mini-bar">
+          <span class="mini-bar-label">会計精度</span>
+          <div class="mini-bar-track"><div class="mini-bar-fill" style="width:96%"></div></div>
+        </div>
+        <div class="mini-bar">
+          <span class="mini-bar-label">現場負荷</span>
+          <div class="mini-bar-track"><div class="mini-bar-fill accent" style="width:65%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NUMBERS ─── -->
+<section class="numbers">
+  <div class="numbers-grid">
+    <div class="fi">
+      <div class="num-val">TOP 10</div>
+      <div class="num-label">ベトナムAIoT開発企業認定</div>
+    </div>
+    <div class="fi">
+      <div class="num-val">10<span>年+</span></div>
+      <div class="num-label">日本企業との開発実績</div>
+    </div>
+    <div class="fi">
+      <div class="num-val">200<span>件+</span></div>
+      <div class="num-label">グローバルプロジェクト実績</div>
+    </div>
+    <div class="fi">
+      <div class="num-val">150<span>名</span></div>
+      <div class="num-label">エンジニア・AI研究者</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INDUSTRY HUB ─── -->
+<section id="industry" class="section" style="background:var(--bg)">
+  <div class="section-header">
+    <div class="section-tag">業界別ソリューション</div>
+    <h2>あなたの業界の「困った」から始めます</h2>
+    <p class="section-sub">業界ごとに異なる現場の課題を理解しているから、的確なソリューションをご提案できます。</p>
+  </div>
+  <div class="industry-grid">
+    <a href="service-multistore.html" class="industry-card fi">
+      <div class="industry-icon">🦴</div>
+      <div class="industry-name">整骨院・鍼灸・サロン</div>
+      <ul class="industry-problems">
+        <li>予約のダブルブッキングが多発</li>
+        <li>現金精算・締め作業に時間がかかる</li>
+        <li>施術提案が属人化している</li>
+      </ul>
+      <span class="industry-link">ソリューションを見る →</span>
+    </a>
+    <a href="#" class="industry-card fi">
+      <div class="industry-icon">🛒</div>
+      <div class="industry-name">小売チェーン</div>
+      <ul class="industry-problems">
+        <li>顧客の購買行動データがない</li>
+        <li>POP・キャンペーンの店舗展開が追いつかない</li>
+        <li>在庫・売上管理がExcel頼み</li>
+      </ul>
+      <span class="industry-link">ソリューションを見る →</span>
+    </a>
+    <a href="#" class="industry-card fi">
+      <div class="industry-icon">🍽️</div>
+      <div class="industry-name">飲食チェーン</div>
+      <ul class="industry-problems">
+        <li>電話予約対応に人手を取られる</li>
+        <li>サイネージの広告効果が測れない</li>
+        <li>顧客のリピート施策が打てない</li>
+      </ul>
+      <span class="industry-link">ソリューションを見る →</span>
+    </a>
+    <a href="#" class="industry-card fi">
+      <div class="industry-icon">🚚</div>
+      <div class="industry-name">物流・ロジスティクス</div>
+      <ul class="industry-problems">
+        <li>問い合わせ対応がパンクしている</li>
+        <li>配送状況の確認が手作業</li>
+        <li>倉庫の在庫管理を効率化したい</li>
+      </ul>
+      <span class="industry-link">ソリューションを見る →</span>
+    </a>
+    <a href="#" class="industry-card fi">
+      <div class="industry-icon">📚</div>
+      <div class="industry-name">教育・スクール</div>
+      <ul class="industry-problems">
+        <li>受講生の個別対応がしきれない</li>
+        <li>教材管理・セキュリティに不安</li>
+        <li>学習進捗の可視化ができていない</li>
+      </ul>
+      <span class="industry-link">ソリューションを見る →</span>
+    </a>
+    <a href="#" class="industry-card fi" style="background:var(--primary-light); border-color: var(--primary); text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div class="industry-icon">💬</div>
+      <div class="industry-name" style="color:var(--primary)">業界が見つからない方へ</div>
+      <p style="font-size:14px; color:var(--text-sub); margin-bottom:16px;">上記以外の業界でもDX・AI導入のご相談を承ります。</p>
+      <span class="industry-link">まずは無料で相談する →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ─── POC HIGHLIGHT ─── -->
+<section id="poc" class="section">
+  <div class="section-header">
+    <div class="section-tag">POC製品</div>
+    <h2>すぐに試せる。小さく始められる。</h2>
+    <p class="section-sub">大規模な開発投資は不要。まずPOCで「本当に効くか」を現場で実証してから拡張できます。</p>
+  </div>
+  <div class="poc-grid">
+    <div class="poc-card fi">
+      <div class="poc-icon">📅</div>
+      <div class="poc-name">Web予約システム</div>
+      <div class="poc-desc">電話予約・ダブルブッキングをゼロに。患者・顧客がスマホで24時間予約できます。</div>
+      <div class="poc-tags">
+        <span class="poc-tag">整骨院</span><span class="poc-tag">サロン</span><span class="poc-tag">教育</span>
+      </div>
+    </div>
+    <div class="poc-card fi">
+      <div class="poc-icon">💳</div>
+      <div class="poc-name">POSレジ・自動精算</div>
+      <div class="poc-desc">保険・優待・各種支払いを自動処理。現金に触れない締め作業でミスを根絶します。</div>
+      <div class="poc-tags">
+        <span class="poc-tag">整骨院</span><span class="poc-tag">小売</span><span class="poc-tag">飲食</span>
+      </div>
+    </div>
+    <div class="poc-card fi">
+      <div class="poc-icon">📺</div>
+      <div class="poc-name">AIデジタルサイネージ</div>
+      <div class="poc-desc">本部からキャンペーン情報を全店舗に一括配信。AI顔分析で広告効果も計測できます。</div>
+      <div class="poc-tags">
+        <span class="poc-tag">多店舗全般</span><span class="poc-tag">AI分析</span>
+      </div>
+    </div>
+    <div class="poc-card fi">
+      <div class="poc-icon">🤖</div>
+      <div class="poc-name">AIチャットボット</div>
+      <div class="poc-desc">問い合わせ・予約確認・FAQ対応をAIが24時間自動化。対応工数を大幅に削減します。</div>
+      <div class="poc-tags">
+        <span class="poc-tag">多業種</span><span class="poc-tag">LINE連携</span>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:32px;">
+    <a href="#" class="btn btn-outline">POC製品をすべて見る →</a>
+  </div>
+</section>
+
+<!-- ─── CASE STUDIES ─── -->
+<section id="cases" class="section" style="background:var(--bg)">
+  <div class="section-header">
+    <div class="section-tag">開発実績</div>
+    <h2>Rabilooが一緒に作ってきたもの</h2>
+    <p class="section-sub">同じ課題を抱えていた企業が、どう変わったかをご覧ください。</p>
+  </div>
+  <div class="case-grid">
+    <a href="#" class="case-card fi">
+      <div class="case-thumb">🦴</div>
+      <div class="case-body">
+        <div class="case-tags">
+          <span class="case-tag-item">整骨院</span>
+          <span class="case-tag-item">54店舗</span>
+          <span class="case-tag-item">10年伴走</span>
+        </div>
+        <div class="case-title">ほねごり — 整骨院54店舗のDXを支える基幹システム</div>
+        <div class="case-desc">予約システム・POSレジ・デジタルサイネージ・AI骨格解析・社内SNS「WILLMate」まで、事業成長に合わせて段階的にシステムを構築。</div>
+        <span class="case-link">事例を読む →</span>
+      </div>
+    </a>
+    <a href="#" class="case-card fi">
+      <div class="case-thumb">💆</div>
+      <div class="case-body">
+        <div class="case-tags">
+          <span class="case-tag-item">整体院</span>
+          <span class="case-tag-item">会員アプリ</span>
+          <span class="case-tag-item">LINE連携</span>
+        </div>
+        <div class="case-title">もみ徳 — LINE連携の店舗会員アプリで顧客リピート率向上</div>
+        <div class="case-desc">顧客の来院履歴・施術記録をアプリで一元管理。LINE通知でリピート来院を促進し、顧客単価・LTVを改善。</div>
+        <span class="case-link">事例を読む →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ─── WHY RABILOO ─── -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">Rabilooが選ばれる理由</div>
+    <h2>ベンダーではなく、パートナーとして</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item fi">
+      <div class="why-icon">🏭</div>
+      <div class="why-title">業界を知っているから<br>的確に提案できる</div>
+      <div class="why-desc">整骨院・物流・小売・教育の業務ドメイン知識を持つチームが担当。「IT用語で会話しなくていい」と言われる、現場目線の提案力。</div>
+    </div>
+    <div class="why-item fi">
+      <div class="why-icon">🧪</div>
+      <div class="why-title">POCで試せるから<br>初期リスクがない</div>
+      <div class="why-desc">最初から大きな開発契約は不要。小さく始めて効果を実感してから、自社専用にカスタマイズして育てられます。</div>
+    </div>
+    <div class="why-item fi">
+      <div class="why-icon">🔌</div>
+      <div class="why-title">ソフトからハードまで<br>一気通貫で対応</div>
+      <div class="why-desc">Webアプリだけでなく、IoTデバイスの基盤設計から製造まで自社で完結。AIoT開発企業としてベトナムTOP10に選ばれた実力。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BOTTOM CTA ─── -->
+<section class="bottom-cta">
+  <div>
+    <h2>まず30分、話してみませんか。</h2>
+    <p>DXのゴールや予算が決まっていなくても大丈夫です。<br>今の業務の「困っていること」を教えてください。Rabilooが一緒に考えます。</p>
+    <a href="#" class="btn-white">
+      無料DX診断を申し込む
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+    </a>
+    <p style="margin-top:16px; font-size:13px; opacity:0.7;">完全無料・30分のオンライン診断 ／ 強引な営業は一切ありません</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Rabiloo</div>
+      <div class="footer-tagline">多店舗DX・AIトランスフォーメーション パートナー</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">ソリューション</div>
+      <a href="service-multistore.html">整骨院・鍼灸</a>
+      <a href="#">小売チェーン</a>
+      <a href="#">飲食チェーン</a>
+      <a href="#">物流</a>
+      <a href="#">教育</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">企業情報</div>
+      <a href="#">会社概要</a>
+      <a href="#">開発実績</a>
+      <a href="#">POC製品一覧</a>
+      <a href="#">ブログ</a>
+      <a href="#">お問い合わせ</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 Rabiloo Co., Ltd. All Rights Reserved.</div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 60);
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

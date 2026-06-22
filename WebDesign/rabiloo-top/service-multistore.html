@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabiloo | 多店舗経営企業の DX・AI 導入パートナー</title>
+  <meta name="description" content="整骨院54店舗・年商100億円規模のDXを支えてきたAIoTパートナー。POCで小さく始めて、長期伴走。多店舗経営のDX・AI導入はRabilooへ。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand Colors */
+      --color-primary-500: #003bba;  /* Primary Blue */
+      --color-primary-on: #ffffff;   /* Primary背景上のテキスト */
+      --color-accent-500: #ff9900;   /* Accent Orange */
+      --color-accent-on: #111111;    /* Accent背景上のテキスト */
+
+      /* Neutral Colors */
+      --color-text-primary: #111111;
+      --color-text-secondary: #565656;
+      --color-text-muted: #c0c0c0;
+      --color-border: #d1d1d1;
+      --color-bg-tag: #f6f6ee;
+      --color-bg-main: #f8f7f5;
+      --color-surface: #ffffff;
+      
+      --gradient-main: linear-gradient(135deg, var(--color-primary-500), #2563eb);
+      --gradient-hero: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-accent-500) 100%);
+      --shadow-glow: 0 0 40px rgba(0, 59, 186, 0.15);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-pill: 9999px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      background: var(--color-surface);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      font-weight: 500;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 60px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-surface);
+      border-bottom: 1.5px dashed var(--color-border);
+      transition: all 0.3s;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--color-primary-500);
+      letter-spacing: -0.03em;
+    }
+    nav { display: flex; gap: 2rem; align-items: center; }
+    nav a {
+      color: var(--color-text-primary);
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 400; /* Regular for nav */
+      line-height: 1.3;
+      padding: 8px;
+      transition: color 0.18s ease;
+    }
+    nav a:hover { color: var(--color-primary-500); }
+    .btn-nav {
+      background: var(--color-primary-500);
+      color: var(--color-primary-on) !important;
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 500; /* Medium for buttons */
+      font-size: 16px;
+      line-height: 24px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-nav:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      padding: 140px 5% 80px; /* Reduced top spacing for header */
+      overflow: hidden;
+      background: var(--color-bg-main);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0, 59, 186, 0.05) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 80% 70%, rgba(255, 153, 0, 0.05) 0%, transparent 60%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.1;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 24px;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--color-primary-500);
+    }
+    .hero-h1 {
+      font-size: clamp(32px, 4vw, 44px); /* Smaller H1 for JP */
+      font-weight: 700; /* Bold */
+      line-height: 1.4;
+      letter-spacing: 0.02em; /* Better JP tracking */
+      margin-bottom: 24px;
+      color: var(--color-text-primary);
+    }
+    .hero-h1 .grad {
+      color: var(--color-primary-500);
+    }
+    .hero-sub {
+      font-size: 16px; /* Standard Body Text */
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+    .hero-sub strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-primary-500);
+      color: var(--color-primary-on);
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 59, 186, 0.2); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-surface);
+      color: var(--color-text-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--color-primary-500); background: var(--color-bg-main); }
+
+    /* ─── HERO VISUAL ─── */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card-stack {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/0.9;
+    }
+    .hcard {
+      position: absolute;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: 24px;
+      background: var(--color-surface);
+      box-shadow: 0 16px 42px rgba(0,0,0,.08);
+    }
+    .hcard-main {
+      top: 5%; left: 0; right: 0;
+      z-index: 3;
+    }
+    .hcard-label {
+      font-size: 14px; /* Small label */
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .hcard-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .hcard-stat .num {
+      font-size: 48px; /* Reduced Stat Number */
+      font-weight: 700;
+      color: var(--color-primary-500);
+      line-height: 1;
+    }
+    .hcard-stat .unit {
+      font-size: 24px; /* Sub-heading */
+      color: var(--color-text-primary);
+      font-weight: 500;
+    }
+    .hcard-desc {
+      font-size: 16px; /* Label / Link size */
+      color: var(--color-text-secondary);
+    }
+    .hcard-bottom {
+      bottom: 0; left: 5%; right: 5%;
+      background: var(--color-bg-main);
+      z-index: 2;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .hcard-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(0, 59, 186, 0.1);
+      color: var(--color-primary-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .hcard-bottom-text .title {
+      font-size: 18px; /* Body Text */
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+    .hcard-bottom-text .sub {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+    .hcard-badge {
+      margin-left: auto;
+      background: rgba(255, 153, 0, 0.1);
+      color: var(--color-accent-500);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+    .bar-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .bar-item { display: flex; align-items: center; gap: 8px; }
+    .bar-label { font-size: 14px; color: var(--color-text-secondary); width: 80px; flex-shrink: 0; }
+    .bar-track {
+      flex: 1;
+      height: 6px;
+      background: var(--color-border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--color-primary-500);
+      animation: bar-grow 1.5s ease-out forwards;
+      transform-origin: left;
+    }
+    @keyframes bar-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section {
+      padding: 60px 5%; /* Tighter section spacing */
+      position: relative;
+      z-index: 1;
+    }
+    .section-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 18px; /* Section Label */
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--color-text-primary);
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .section-label::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--color-primary-500);
+    }
+    .section-h2 {
+      font-size: clamp(28px, 3.5vw, 36px); /* Smaller H2 */
+      font-weight: 700; /* Bold */
+      line-height: 1.4;
+      margin-bottom: 24px;
+      color: var(--color-text-primary);
+    }
+    .section-sub {
+      font-size: 16px; /* Standard Body Text */
+      color: var(--color-text-secondary);
+      max-width: 800px;
+      line-height: 1.7;
+    }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 0 auto; }
+
+    /* ─── PAIN SECTION ─── */
+    #pain { background: var(--color-surface); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px; /* lg spacing */
+      margin-top: 48px;
+    }
+    .pain-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md); /* Medium (8px - 12px) for cards */
+      padding: 32px; /* xl spacing */
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      cursor: default;
+    }
+    .pain-card:hover {
+      border-color: var(--color-primary-500);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05); /* Elevated shadow */
+      transform: translateY(-4px);
+    }
+    .pain-icon {
+      font-size: 32px;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .pain-text {
+      font-size: 18px; /* Body */
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .pain-text strong {
+      display: block;
+      color: var(--color-text-primary);
+      font-size: 20px; /* Reduced Sub-heading */
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    /* ─── SOLUTION SECTION ─── */
+    .steps-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+      position: relative;
+    }
+    .steps-wrap::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(16.66% + 24px);
+      right: calc(16.66% + 24px);
+      height: 2px;
+      background: var(--color-border);
+      z-index: 0;
+    }
+    .step {
+      text-align: center;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--color-primary-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--color-primary-on);
+    }
+    .step-title {
+      font-size: 20px; /* H3 */
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-text-primary);
+    }
+    .step-sub {
+      font-size: 18px; /* Body */
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    .step-tag {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 4px 16px;
+      border-radius: var(--radius-pill);
+    }
+
+    /* ─── KPI SECTION ─── */
+    #kpi {
+      background: var(--color-bg-main);
+      padding: 80px 5%;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .kpi-item {
+      background: var(--color-surface);
+      padding: 40px 24px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .kpi-item:hover { background: var(--color-bg-main); }
+    .kpi-num {
+      font-size: 40px; /* Reduced Stat Number */
+      font-weight: 700;
+      color: var(--color-primary-500);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .kpi-label {
+      font-size: 16px; /* Label */
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* ─── CASE SECTION ─── */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .case-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .case-card:hover {
+      border-color: var(--color-primary-500);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .case-card.featured {
+      grid-column: span 2;
+    }
+    .case-thumb {
+      height: 300px; /* Increased for better visual */
+      position: relative;
+      overflow: hidden;
+      background: var(--color-bg-main);
+    }
+    .case-thumb-bg {
+      width: 100%;
+      height: 100%;
+      background: var(--color-bg-tag);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .case-thumb-icon {
+      font-size: 48px;
+    }
+    .case-thumb-num {
+      font-size: 56px; /* H2 size */
+      font-weight: 400;
+      color: var(--color-text-primary);
+    }
+    .case-body { padding: 32px; }
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .tag {
+      font-size: 16px; /* Label */
+      font-weight: 500;
+      padding: 4px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+    }
+    .case-title {
+      font-size: 24px; /* H3 */
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: var(--color-text-primary);
+      line-height: 1.3;
+    }
+    .case-desc {
+      font-size: 18px; /* Body */
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-primary-500);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .case-link:hover { gap: 12px; }
+
+    /* ─── POC PRODUCTS ─── */
+    #products { background: var(--color-bg-main); }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .product-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--color-primary-500);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+    .product-card:hover {
+      border-color: var(--color-primary-500);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .product-card:hover::before { transform: scaleX(1); }
+    .product-icon {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-sm);
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+    .product-title {
+      font-size: 24px; /* H3 */
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .product-desc {
+      font-size: 18px; /* Body */
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .product-industries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .industry-tag {
+      font-size: 16px; /* Label */
+      font-weight: 500;
+      padding: 4px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+    }
+
+    /* ─── WHY SECTION ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; /* xxxl spacing */
+      align-items: center;
+      margin-top: 48px;
+    }
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .why-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .why-num {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--color-primary-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-primary-on);
+      flex-shrink: 0;
+    }
+    .why-content .wtitle {
+      font-size: 24px; /* H3 */
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .why-content .wdesc {
+      font-size: 18px; /* Body */
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    .why-visual {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+    }
+    .why-visual-title {
+      font-size: 18px; /* Section Label */
+      font-weight: 500;
+      color: var(--color-text-primary);
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .why-visual-title::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--color-primary-500);
+    }
+    .quote-card {
+      background: var(--color-bg-main);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .quote-text {
+      font-size: 18px; /* Body */
+      color: var(--color-text-primary);
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .quote-from {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .quote-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .quote-name {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+    .quote-role {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      padding: 120px 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--color-bg-main);
+    }
+    .cta-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-bg-tag);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+      font-size: 18px; /* Section Label */
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 24px;
+    }
+    .cta-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--color-primary-500);
+    }
+    .cta-h2 {
+      font-size: clamp(28px, 3.5vw, 36px);
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      color: var(--color-text-primary);
+    }
+    .cta-h2 .grad {
+      color: var(--color-primary-500);
+    }
+    .cta-desc {
+      font-size: 18px; /* Body */
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-primary-500);
+      color: var(--color-primary-on);
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 16px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 59, 186, 0.2); }
+    .btn-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-surface);
+      color: var(--color-text-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 16px;
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-cta-ghost:hover { border-color: var(--color-primary-500); background: var(--color-bg-main); }
+    .cta-note {
+      margin-top: 24px;
+      font-size: 16px; /* Label */
+      color: var(--color-text-muted);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #010511; /* From design guidelines */
+      color: #ffffff;
+      padding: 72px 5%;
+    }
+    .footer-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.38);
+      width: 100%;
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ─── INDUSTRY NAV ─── */
+    .industry-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      margin-bottom: 48px;
+    }
+    .industry-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 24px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-secondary);
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .industry-btn.active, .industry-btn:hover {
+      border-color: var(--color-primary-500);
+      color: var(--color-primary-on);
+      background: var(--color-primary-500);
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0 5%;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-h1 { font-size: clamp(28px, 4vw, 36px); }
+      .section-h2, .cta-h2 { font-size: clamp(24px, 3.5vw, 32px); }
+      .hcard-stat .num { font-size: 40px; }
+      .kpi-num { font-size: 32px; }
+      .pain-grid, .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-grid { grid-template-columns: 1fr; }
+      .case-card.featured { grid-column: span 1; }
+      .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .pain-grid, .steps-wrap, .product-grid { grid-template-columns: 1fr; }
+      .steps-wrap::before { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      nav .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="logo">Rabiloo</div>
+  <nav>
+    <a href="#" class="hide-mobile">サービス</a>
+    <a href="#" class="hide-mobile">事例</a>
+    <a href="#" class="hide-mobile">POC製品</a>
+    <a href="#" class="hide-mobile">会社概要</a>
+    <a href="#cta" class="btn-nav">無料DX診断を受ける</a>
+  </nav>
+</header>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-tag">AIoTパートナー ／ ベトナムTOP10</div>
+      <h1 class="hero-h1">
+        多店舗経営のDX・AI導入、<br>
+        <span class="grad">まず1つの課題だけ</span><br>
+        解決しませんか。
+      </h1>
+      <p class="hero-sub">
+        DXに何億円もかける必要はありません。<br>
+        <strong>予約管理・現金精算・デジタルサイネージ</strong>——<br>
+        現場の「今すぐ解決したい」から始めるPOC型DXで、<br>
+        整骨院<strong>54店舗・年商100億円</strong>規模の成長を支援してきました。
+      </p>
+      <div class="hero-cta-group">
+        <a href="#cta" class="btn-primary">
+          無料DX診断を受ける（30分）
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a href="#products" class="btn-secondary">
+          POC製品を見る
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hcard hcard-main">
+          <div class="hcard-label">ほねごり様 DX実績</div>
+          <div class="hcard-stat">
+            <span class="num">54</span>
+            <span class="unit">店舗</span>
+          </div>
+          <div class="hcard-desc">整骨院チェーン全店舗のDXを伴走支援</div>
+          <div class="bar-wrap" style="margin-top:24px">
+            <div class="bar-item">
+              <span class="bar-label">予約効率</span>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <span class="bar-label">会計精度</span>
+              <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+            </div>
+            <div class="bar-item">
+              <span class="bar-label">現場負荷</span>
+              <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--color-accent-500)"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="hcard hcard-bottom">
+          <div class="hcard-icon">🏆</div>
+          <div class="hcard-bottom-text">
+            <div class="title">AIoT開発 ベトナムTOP10</div>
+            <div class="sub">ハノイ工科大学出身者チーム</div>
+          </div>
+          <div class="hcard-badge">認定</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PAIN ─── -->
+<section id="pain" class="section">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <div class="section-label">Pain Points</div>
+      <h2 class="section-h2">こんな悩み、ありませんか？</h2>
+      <p class="section-sub">多店舗経営の経営者・DX担当者が抱える「あるある」の課題です。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <span class="pain-icon">📊</span>
+        <div class="pain-text">
+          <strong>Excelとアナログが限界に</strong>
+          売上・在庫・シフト管理をExcelや手書きで行っており、店舗数が増えるほど管理が破綻しそうになっている。
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <span class="pain-icon">📅</span>
+        <div class="pain-text">
+          <strong>予約のダブルブッキングが多発</strong>
+          電話予約とLINE予約が混在し、確認・修正対応で現場スタッフが疲弊している。
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <span class="pain-icon">💴</span>
+        <div class="pain-text">
+          <strong>締め作業に時間がかかりすぎる</strong>
+          現金の数え間違いや日報の手集計が毎日の業務を圧迫し、コア業務に集中できていない。
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <span class="pain-icon">📢</span>
+        <div class="pain-text">
+          <strong>情報展開が本部から末端まで届かない</strong>
+          キャンペーンやPOP変更のたびに各店舗に個別連絡し、本部スタッフが消耗している。
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <span class="pain-icon">🤖</span>
+        <div class="pain-text">
+          <strong>DXをやりたいが何から始めればいいかわからない</strong>
+          「AI導入」「DX推進」と言葉では知っているが、具体的に何をすれば業績に直結するかが見えない。
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <span class="pain-icon">🔗</span>
+        <div class="pain-text">
+          <strong>ITベンダーが業界のことをわかってくれない</strong>
+          相談してみたが、業務フローや業界特性を理解した上での提案をもらえず、会話が噛み合わない。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── SOLUTION ─── -->
+<section id="solution" class="section">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-h2">POCで試して、成功したら育てる。<br>Rabilooの伴走型DX支援</h2>
+      <p class="section-sub">大規模な開発投資は不要。まずは小さく実証してから、自社の成長に合わせて拡張します。</p>
+    </div>
+    <div class="steps-wrap">
+      <div class="step fade-up">
+        <div class="step-num">1</div>
+        <div class="step-title">無料DX診断</div>
+        <p class="step-sub">30分のオンラインヒアリングで、今の業務の課題を整理します。DXのゴールや予算が決まっていなくても大丈夫です。</p>
+        <span class="step-tag">無料・30分・オンライン</span>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">2</div>
+        <div class="step-title">POCで即効性を実証</div>
+        <p class="step-sub">課題に最も効くPOC製品を導入し、小さく・早く・安く試します。「本当に効くか」を投資前に実感できます。</p>
+        <span class="step-tag">リスク最小・効果実感</span>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">3</div>
+        <div class="step-title">カスタマイズ & 長期伴走</div>
+        <p class="step-sub">POCで成功体験が得られたら、自社専用にカスタマイズしながら拡張。事業成長に合わせてRabilooが伴走し続けます。</p>
+        <span class="step-tag">長期パートナーシップ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KPI ─── -->
+<div id="kpi">
+  <div class="kpi-grid">
+    <div class="kpi-item fade-up">
+      <div class="kpi-num">54<span style="font-size:24px">店舗</span></div>
+      <div class="kpi-label">多店舗DX支援の最大規模<br>（整骨院チェーン）</div>
+    </div>
+    <div class="kpi-item fade-up">
+      <div class="kpi-num">100<span style="font-size:24px">億円</span></div>
+      <div class="kpi-label">支援先の最高年商規模<br>（目前のクライアント）</div>
+    </div>
+    <div class="kpi-item fade-up">
+      <div class="kpi-num">TOP<span style="font-size:24px"> 10</span></div>
+      <div class="kpi-label">ベトナムAIoT開発企業<br>ランキング認定</div>
+    </div>
+    <div class="kpi-item fade-up">
+      <div class="kpi-num">10<span style="font-size:24px">年+</span></div>
+      <div class="kpi-label">ベトナム×日本企業との<br>開発実績年数</div>
+    </div>
+    <div class="kpi-item fade-up">
+      <div class="kpi-num">4<span style="font-size:24px">業種</span></div>
+      <div class="kpi-label">整骨院・小売・物流・<br>教育の深い業界知識</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CASES ─── -->
+<section id="cases" class="section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">Customer Stories</div>
+      <h2 class="section-h2">Rabilooが一緒に作ってきたもの</h2>
+      <p class="section-sub">同じ課題を抱えていた企業が、どう変わったかをご覧ください。</p>
+    </div>
+    <div class="industry-nav">
+      <a href="#" class="industry-btn active">🏥 整骨院・鍼灸</a>
+      <a href="#" class="industry-btn">🛒 小売チェーン</a>
+      <a href="#" class="industry-btn">📚 教育・スクール</a>
+      <a href="#" class="industry-btn">🚚 ロジスティクス</a>
+    </div>
+    <div class="case-grid">
+      <div class="case-card featured fade-up">
+        <div class="case-thumb">
+          <div class="case-thumb-bg">
+            <div class="case-thumb-icon">🦴</div>
+            <div class="case-thumb-num">54店舗 ／ 年商100億円規模</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="tag">整骨院チェーン</span>
+            <span class="tag">54店舗</span>
+            <span class="tag">DX全体戦略</span>
+            <span class="tag">10年伴走</span>
+          </div>
+          <div class="case-title">ほねごり — 整骨院DXで54店舗・年商100億円規模へ</div>
+          <div class="case-desc">予約システム・POSレジ・デジタルサイネージ・AI骨格解析（ほねごりスキャン）・社内SNS「WILLMate」まで、事業成長に合わせて段階的にシステムを構築。スタッフが現金に触れないオペレーションを実現し、本部から全店舗への一括情報配信を可能にしました。</div>
+          <a href="#" class="case-link">事例を読む →</a>
+        </div>
+      </div>
+      <div class="case-card fade-up">
+        <div class="case-thumb">
+          <div class="case-thumb-bg">
+            <div class="case-thumb-icon">💆</div>
+            <div class="case-thumb-num">店舗会員アプリ</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="tag">整体院チェーン</span>
+            <span class="tag">会員アプリ</span>
+            <span class="tag">LINE連携</span>
+          </div>
+          <div class="case-title">もみ徳 — LINE連携の店舗会員アプリで顧客リピート率向上</div>
+          <div class="case-desc">顧客の来院履歴・施術記録をアプリで一元管理。LINE通知でリピート来院を促進し、顧客単価・LTVを改善。</div>
+          <a href="#" class="case-link">事例を読む →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── PRODUCTS ─── -->
+<section id="products" class="section" style="background: var(--color-bg-main)">
+  <div class="section-inner">
+    <div class="text-center fade-up">
+      <div class="section-label">POC Products</div>
+      <h2 class="section-h2">まず試してほしい、<br>Rabilooのスターターキット</h2>
+      <p class="section-sub">すぐに導入できるPOC製品から始めて、自社専用にカスタマイズしながら育てられます。</p>
+    </div>
+    <div class="product-grid" style="margin-top:48px">
+      <div class="product-card fade-up">
+        <div class="product-icon">📅</div>
+        <div class="product-title">Web予約システム</div>
+        <div class="product-desc">電話予約・ダブルブッキングをゼロに。患者・顧客がスマホで24時間予約できる仕組みを素早く導入します。</div>
+        <div class="product-industries">
+          <span class="industry-tag">整骨院</span>
+          <span class="industry-tag">サロン</span>
+          <span class="industry-tag">教育</span>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-icon">💳</div>
+        <div class="product-title">POSレジ・自動精算</div>
+        <div class="product-desc">保険・優待・各種支払い方法を自動処理。現金に触れない締め作業で、ヒューマンエラーを根絶します。</div>
+        <div class="product-industries">
+          <span class="industry-tag">整骨院</span>
+          <span class="industry-tag">小売</span>
+          <span class="industry-tag">飲食</span>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-icon">📺</div>
+        <div class="product-title">デジタルサイネージ</div>
+        <div class="product-desc">本部からのキャンペーン情報・POPを全店舗に一括配信・自動切替。店舗数が増えても運用負荷ゼロ。</div>
+        <div class="product-industries">
+          <span class="industry-tag">多店舗全般</span>
+          <span class="industry-tag">小売</span>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-icon">📱</div>
+        <div class="product-title">店舗会員アプリ</div>
+        <div class="product-desc">LINE連携で顧客の来院・購買履歴を一元管理。プッシュ通知でリピートを促進し、LTVを向上させます。</div>
+        <div class="product-industries">
+          <span class="industry-tag">整骨院</span>
+          <span class="industry-tag">小売</span>
+          <span class="industry-tag">サロン</span>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-icon">🦴</div>
+        <div class="product-title">AI骨格・姿勢解析</div>
+        <div class="product-desc">撮影データからAIが骨格・筋肉の状態を可視化。施術提案の再現性を高め、属人化を排除します。</div>
+        <div class="product-industries">
+          <span class="industry-tag">整骨院</span>
+          <span class="industry-tag">フィットネス</span>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-icon">🤖</div>
+        <div class="product-title">AIチャットボット</div>
+        <div class="product-desc">問い合わせ・予約確認・FAQ対応をAIが24時間自動化。スタッフの対応工数を大幅に削減します。</div>
+        <div class="product-industries">
+          <span class="industry-tag">多業種</span>
+          <span class="industry-tag">LINE連携</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px">
+      <a href="#" class="btn-secondary" style="border-radius: var(--radius-pill); display:inline-flex">
+        POC製品一覧をすべて見る
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY ─── -->
+<section id="why" class="section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">Why Rabiloo</div>
+      <h2 class="section-h2">ベンダーではなく、<br>パートナーを選ぶ理由</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-list">
+        <div class="why-item fade-up">
+          <div class="why-num">1</div>
+          <div class="why-content">
+            <div class="wtitle">業界を知っているから、的確に提案できる</div>
+            <div class="wdesc">整骨院・物流・小売・教育の業務ドメイン知識を持つチームが担当。「IT用語で会話しなくていい」と言われる、現場目線の提案力。</div>
+          </div>
+        </div>
+        <div class="why-item fade-up">
+          <div class="why-num">2</div>
+          <div class="why-content">
+            <div class="wtitle">ソフトからハードウェアまで一貫対応</div>
+            <div class="wdesc">デバイスの設計・製造・販売まで自社で対応可能。AIoTの開発企業としてベトナムTOP10に選ばれた実力。</div>
+          </div>
+        </div>
+        <div class="why-item fade-up">
+          <div class="why-num">3</div>
+          <div class="why-content">
+            <div class="wtitle">POCで試せるから、初期リスクがない</div>
+            <div class="wdesc">最初から大きな開発契約は不要。小さく始めて効果を実感してから、自社専用にカスタマイズして育てられます。</div>
+          </div>
+        </div>
+        <div class="why-item fade-up">
+          <div class="why-num">4</div>
+          <div class="why-content">
+            <div class="wtitle">圧倒的なスピードで対応</div>
+            <div class="wdesc">ハノイ工科大学出身者で構成される優秀なチームが、国内ベンダーと比較しても「恐ろしく速い」スピードで対応・修正します。</div>
+          </div>
+        </div>
+        <div class="why-item fade-up">
+          <div class="why-num">5</div>
+          <div class="why-content">
+            <div class="wtitle">事業成長に長期で伴走する</div>
+            <div class="wdesc">ほねごり様とは10年以上の継続開発実績。「発注されたものを作る外注」ではなく、一緒に成長するパートナーとして動きます。</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual fade-up">
+        <div class="why-visual-title">クライアントの声</div>
+        <div class="quote-card">
+          <div class="quote-text">
+            「Rabilooは単なるシステム会社ではなく、私たちの事業のことを本当に考えてくれているパートナーです。バグや要望への対応スピードが、他のベンダーとは比べ物にならないほど速い。」
+          </div>
+          <div class="quote-from">
+            <div class="quote-avatar">🦴</div>
+            <div>
+              <div class="quote-name">阿部 様</div>
+              <div class="quote-role">株式会社ほねごり / 代表取締役</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:24px; padding:24px; background: var(--color-bg-tag); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+          <div style="font-size:14px; color: var(--color-text-primary); font-weight:500; letter-spacing:0.08em; margin-bottom:12px;">TECHNOLOGY STACK</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="font-size:14px; padding:4px 12px; border-radius:50px; background:var(--color-surface); border:1px solid var(--color-border); color:var(--color-text-secondary);">AI / Machine Learning</span>
+            <span style="font-size:14px; padding:4px 12px; border-radius:50px; background:var(--color-surface); border:1px solid var(--color-border); color:var(--color-text-secondary);">IoT Device Design</span>
+            <span style="font-size:14px; padding:4px 12px; border-radius:50px; background:var(--color-surface); border:1px solid var(--color-border); color:var(--color-text-secondary);">LINE API</span>
+            <span style="font-size:14px; padding:4px 12px; border-radius:50px; background:var(--color-surface); border:1px solid var(--color-border); color:var(--color-text-secondary);">React / Next.js</span>
+            <span style="font-size:14px; padding:4px 12px; border-radius:50px; background:var(--color-surface); border:1px solid var(--color-border); color:var(--color-text-secondary);">AWS / GCP</span>
+            <span style="font-size:14px; padding:4px 12px; border-radius:50px; background:var(--color-surface); border:1px solid var(--color-border); color:var(--color-text-secondary);">Computer Vision</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-badge fade-up">まずは話してみる ／ 無料</div>
+    <h2 class="cta-h2 fade-up">
+      まず30分、<br>
+      <span class="grad">話してみませんか。</span>
+    </h2>
+    <p class="cta-desc fade-up">
+      DXのゴールや予算が決まっていなくても大丈夫です。<br>
+      今の業務の「困っていること」を教えていただければ、<br>
+      Rabilooがどんな小さな課題から始められるか、一緒に考えます。
+    </p>
+    <div class="cta-group fade-up">
+      <a href="#" class="btn-cta">
+        無料DX診断を申し込む
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#products" class="btn-cta-ghost">
+        まずはPOC製品を見る
+      </a>
+    </div>
+    <div class="cta-note fade-up">完全無料・30分のオンライン診断 ／ 強引な営業は一切ありません</div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Rabiloo</div>
+    <div class="footer-links">
+      <a href="#">サービス</a>
+      <a href="#">事例</a>
+      <a href="#">POC製品</a>
+      <a href="#">会社概要</a>
+      <a href="#">ブログ</a>
+      <a href="#">採用</a>
+      <a href="#">お問い合わせ</a>
+    </div>
+    <div class="footer-copy">© 2024 Rabiloo Co., Ltd.</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Header scroll effect
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.style.background = window.scrollY > 50
+      ? 'var(--color-surface)'
+      : 'var(--color-surface)';
+    header.style.boxShadow = window.scrollY > 50
+      ? '0 2px 8px rgba(0,0,0,0.05)'
+      : 'none';
+  });
+</script>
+</body>
+</html>
